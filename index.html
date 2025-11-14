@@ -12,428 +12,257 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
-    /* ---------- ROOT THEME ---------- */
     :root {
-      --ink: #f7f3eb;
-      --ink-soft: #d9d0c3;
-      --paper: #0f1115;
-      --paper-soft: #191c22;
-      --accent: #263e33;        /* studio green vibe */
-      --accent-soft: #314b3e;
-      --accent-pop: #c19b5b;    /* muted gold */
-      --muted-red: #5b2d35;     /* Addams family lipstick */
-      --border-subtle: rgba(247, 243, 235, 0.06);
-      --radius-lg: 22px;
+      --bg: #081216;          /* deep, moody green-blue */
+      --bg-card: #0f1c21;
+      --bg-soft: #132329;
+      --border: #27373d;
+      --ink: #f6f3ec;
+      --ink-soft: #b1aaa1;
+      --accent: #314d3b;      /* studio green */
+      --accent-soft: #c19b5b; /* muted gold */
+      --accent-blush: #ad6f7b;/* soft cheeky pink */
+      --radius-xl: 24px;
+      --radius-lg: 18px;
       --radius-pill: 999px;
-      --shadow-soft: 0 18px 45px rgba(0,0,0,0.5);
-      --shadow-subtle: 0 0 0 1px rgba(247,243,235,0.04);
     }
 
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
-    }
-
-    ::selection {
-      background: var(--accent-pop);
-      color: #111;
+      box-sizing: border-box;
     }
 
     body {
-      margin: 0;
       min-height: 100vh;
       font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: radial-gradient(circle at top, #1a1d24 0, #050608 48%, #020305 100%);
+      background: radial-gradient(circle at top, #16252c 0, #030608 55%, #010204 100%);
       color: var(--ink);
       display: flex;
       justify-content: center;
-      padding: 32px 18px 40px;
+      padding: 24px 14px 32px;
     }
 
-    /* ---------- PAGE WRAPPER ---------- */
-    .page {
+    main {
       width: 100%;
-      max-width: 1080px;
-      border-radius: 32px;
-      background: radial-gradient(circle at top left, #26323a 0, #101218 35%, #07090c 100%);
-      border: 1px solid var(--border-subtle);
-      box-shadow: var(--shadow-soft);
-      padding: 22px 22px 26px;
+      max-width: 880px;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border);
+      background: linear-gradient(135deg, var(--bg-card), var(--bg-soft));
+      padding: 20px 20px 24px;
       display: flex;
       flex-direction: column;
       gap: 20px;
     }
 
-    /* ---------- HEADER ---------- */
-    .header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    .brand {
+    /* HEADER */
+    header {
       display: flex;
       flex-direction: column;
-      gap: 2px;
-    }
-
-    .brand-mark {
-      display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 4px 10px;
-      border-radius: var(--radius-pill);
-      background: rgba(10, 13, 17, 0.85);
-      border: 1px solid rgba(241, 230, 210, 0.12);
-      backdrop-filter: blur(14px);
-    }
-
-    .brand-initials {
-      width: 22px;
-      height: 22px;
-      border-radius: 999px;
-      border: 1px solid rgba(247, 243, 235, 0.3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: "Cormorant Garamond", serif;
-      font-size: 13px;
-      letter-spacing: 0.07em;
+      text-align: center;
     }
 
     .brand-label {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--ink-soft);
-    }
-
-    .brand-name {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 23px;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 12px;
+      font-size: 10px;
       text-transform: uppercase;
       letter-spacing: 0.2em;
       color: var(--ink-soft);
     }
 
-    .nav a {
-      text-decoration: none;
-      color: inherit;
-      opacity: 0.9;
-      padding: 4px 10px;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      transition: all 0.2s ease;
-    }
-
-    .nav a:hover {
-      border-color: rgba(247,243,235,0.25);
-      background: rgba(247,243,235,0.03);
-      opacity: 1;
-    }
-
-    .nav-dot {
-      width: 3px;
-      height: 3px;
-      border-radius: 99px;
-      background: rgba(247,243,235,0.35);
-    }
-
-    /* ---------- HERO ---------- */
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
-      gap: 20px;
-      align-items: stretch;
-    }
-
-    .hero-left {
-      padding: 18px 18px 20px;
-      border-radius: 26px;
-      background: radial-gradient(circle at top left, #28372e 0, #101319 46%, #080a0f 100%);
-      border: 1px solid rgba(247,243,235,0.12);
-      box-shadow: var(--shadow-subtle);
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    .tag-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .tag {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      padding: 4px 9px;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(247,243,235,0.18);
-      background: rgba(4,6,9,0.7);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .tag-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: var(--muted-red);
-      box-shadow: 0 0 10px rgba(193,74,102,0.7);
-    }
-
-    .hero-title {
+    .brand-name {
       font-family: "Cormorant Garamond", serif;
-      font-size: clamp(28px, 3.1vw, 34px);
-      line-height: 1.07;
-      max-width: 24ch;
-    }
-
-    .hero-title span {
-      color: var(--accent-pop);
-    }
-
-    .hero-sub {
-      font-size: 13px;
-      color: var(--ink-soft);
-      max-width: 46ch;
-    }
-
-    .hero-sub strong {
-      color: var(--ink);
-      font-weight: 500;
-    }
-
-    .hero-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      font-size: 11px;
-    }
-
-    .hero-pill {
-      padding: 4px 9px;
-      border-radius: var(--radius-pill);
-      border: 1px dashed rgba(247,243,235,0.24);
-      background: rgba(3,4,6,0.8);
+      font-size: 24px;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--ink-soft);
     }
 
-    .hero-bottom {
-      margin-top: 6px;
+    nav {
       display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
       gap: 10px;
       font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
       color: var(--ink-soft);
+      margin-top: 4px;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
-    .hero-bottom p {
-      max-width: 40ch;
-    }
-
-    .hero-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 6px 13px;
+    nav a {
+      padding: 4px 9px;
       border-radius: var(--radius-pill);
-      background: linear-gradient(120deg, var(--accent), var(--accent-soft));
-      border: 1px solid rgba(247,243,235,0.15);
+      border: 1px solid transparent;
+    }
+
+    nav a:hover {
+      border-color: var(--border);
+      color: var(--ink);
+    }
+
+    /* HERO */
+    .hero {
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border);
+      padding: 18px 18px 20px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 18px;
+      align-items: center;
+    }
+
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .hero-tag {
       font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 0.18em;
-      text-decoration: none;
+      color: var(--ink-soft);
+    }
+
+    h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(26px, 3vw, 30px);
+      line-height: 1.1;
+      max-width: 18ch;
+    }
+
+    h1 span {
+      color: var(--accent-soft);
+    }
+
+    .hero-line {
+      font-size: 13px;
+      color: var(--ink-soft);
+      max-width: 32ch;
+    }
+
+    .hero-line-2 {
+      font-size: 12px;
+      color: var(--ink-soft);
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .btn-primary {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      padding: 7px 14px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--accent-soft);
+      background: var(--accent);
       color: var(--ink);
-      box-shadow: 0 10px 22px rgba(0,0,0,0.45);
-      white-space: nowrap;
     }
 
-    .hero-cta span {
-      font-size: 14px;
+    .btn-ghost {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      padding: 7px 12px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--ink-soft);
     }
 
-    /* ---------- HERO IMAGE CARD ---------- */
-    .hero-right {
-      border-radius: 26px;
-      border: 1px solid rgba(247,243,235,0.1);
-      background: radial-gradient(circle at top, #2c3b33 0, #101119 40%, #050608 100%);
-      overflow: hidden;
+    /* HERO IMAGE */
+    .hero-image {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      padding: 10px;
       display: flex;
       flex-direction: column;
-    }
-
-    .hero-image-wrap {
-      position: relative;
-      flex: 1;
-      border-bottom: 1px solid rgba(247,243,235,0.12);
-      background: radial-gradient(circle at top, #1a2420 0, #050608 80%);
-      display: flex;
-      align-items: stretch;
-      justify-content: center;
-      padding: 10px;
+      gap: 6px;
+      background: #0b181d;
     }
 
     .hero-image-inner {
-      position: relative;
-      overflow: hidden;
-      border-radius: 20px;
-      border: 1px solid rgba(247,243,235,0.18);
-      aspect-ratio: 4/5;
-      width: 100%;
-      max-width: 340px;
+      border-radius: 14px;
+      border: 1px solid #202f34;
+      aspect-ratio: 4 / 5;
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
 
-      /* TODO: replace with your own image */
+      /* TODO: replace this path with your own image */
       background-image: url("your-moody-print.jpg");
-      /* Example: "images/pnw-forest-01.jpg" */
     }
 
-    .hero-sticker {
-      position: absolute;
-      left: 10px;
-      top: 10px;
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      padding: 5px 9px;
-      border-radius: var(--radius-pill);
-      background: rgba(3,4,6,0.85);
-      border: 1px solid rgba(247,243,235,0.35);
-      backdrop-filter: blur(12px);
-    }
-
-    .hero-label {
-      position: absolute;
-      right: 12px;
-      bottom: 12px;
-      padding: 7px 11px;
-      border-radius: 14px;
-      background: rgba(4,6,8,0.82);
-      border: 1px solid rgba(247,243,235,0.26);
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
+    .hero-caption {
       font-size: 11px;
-    }
-
-    .hero-label span:nth-child(1) {
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
       color: var(--ink-soft);
-      font-size: 10px;
-    }
-
-    .hero-label span:nth-child(2) {
-      font-family: "Cormorant Garamond", serif;
-    }
-
-    .hero-meta {
-      padding: 9px 12px 10px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 10px;
-      font-size: 11px;
-      color: var(--ink-soft);
-    }
-
-    .hero-meta strong {
-      color: var(--ink);
-      font-weight: 500;
-    }
-
-    .meta-badges {
-      display: flex;
-      flex-wrap: wrap;
       gap: 6px;
     }
 
-    .meta-pill {
-      padding: 4px 9px;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(247,243,235,0.22);
-      background: rgba(4,6,10,0.85);
+    .hero-caption span:last-child {
+      color: var(--accent-blush);
     }
 
-    /* ---------- COLLECTIONS ---------- */
-    .section {
-      border-radius: 22px;
-      border: 1px solid rgba(247,243,235,0.1);
-      background: radial-gradient(circle at top left, #1b2420 0, #090a10 70%);
+    /* SECTION BASE */
+    section {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
       padding: 14px 16px 16px;
       display: flex;
       flex-direction: column;
       gap: 12px;
     }
 
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      align-items: baseline;
-    }
-
     .section-title {
       font-family: "Cormorant Garamond", serif;
-      font-size: 20px;
-      letter-spacing: 0.12em;
+      font-size: 17px;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
+      text-align: center;
     }
 
     .section-sub {
       font-size: 12px;
       color: var(--ink-soft);
+      text-align: center;
       max-width: 46ch;
+      margin: 0 auto;
     }
 
-    .collections-grid {
+    /* COLLECTION CARDS */
+    .collections {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0,1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 10px;
       font-size: 12px;
     }
 
-    .collection-card {
-      border-radius: 16px;
-      padding: 10px 10px 11px;
-      background: rgba(5,7,10,0.88);
-      border: 1px solid rgba(247,243,235,0.16);
+    .collection {
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      padding: 10px 11px 11px;
+      background: #0b181d;
       display: flex;
       flex-direction: column;
-      gap: 6px;
-      min-height: 110px;
-    }
-
-    .collection-label {
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--ink-soft);
+      gap: 4px;
     }
 
     .collection-name {
       font-family: "Cormorant Garamond", serif;
-      font-size: 16px;
+      font-size: 15px;
     }
 
     .collection-desc {
@@ -441,380 +270,241 @@
       color: var(--ink-soft);
     }
 
-    /* ---------- DETAILS / HOW IT WORKS ---------- */
-    .details-grid {
+    /* CONTACT */
+    .contact-grid {
       display: grid;
-      grid-template-columns: minmax(0,1.3fr) minmax(0,1fr);
-      gap: 12px;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 10px;
       font-size: 12px;
     }
 
-    .details-block {
-      border-radius: 18px;
-      padding: 11px 12px 12px;
-      background: rgba(5,6,9,0.94);
-      border: 1px solid rgba(247,243,235,0.14);
+    .contact-block {
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      padding: 10px 11px 11px;
+      background: #0b181d;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 6px;
     }
 
-    .details-title {
+    .label {
       font-size: 11px;
       text-transform: uppercase;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.16em;
       color: var(--ink-soft);
     }
 
-    .details-main {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 17px;
-      line-height: 1.24;
+    .link-inline {
+      color: var(--accent-soft);
+      border-bottom: 1px dotted rgba(193,155,91,0.7);
+      text-decoration: none;
     }
 
-    .details-list {
+    .link-inline:hover {
+      border-bottom-style: solid;
+    }
+
+    ul {
       list-style: none;
       display: flex;
       flex-direction: column;
       gap: 4px;
       color: var(--ink-soft);
+      font-size: 11px;
     }
 
-    .details-list li::before {
+    ul li::before {
       content: "– ";
-      opacity: 0.5;
+      opacity: 0.6;
     }
 
-    .details-note {
+    .note {
       font-size: 11px;
       color: var(--ink-soft);
-      opacity: 0.9;
     }
 
-    a.link-inline {
-      color: var(--accent-pop);
-      text-decoration: none;
-      border-bottom: 1px dotted rgba(193,155,91,0.6);
-    }
-
-    a.link-inline:hover {
-      border-bottom-style: solid;
-    }
-
-    /* ---------- FOOTER ---------- */
-    .footer {
+    /* FOOTER */
+    footer {
+      margin-top: 2px;
+      padding-top: 6px;
+      border-top: 1px solid var(--border);
+      font-size: 11px;
+      color: var(--ink-soft);
       display: flex;
       justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
       align-items: center;
-      gap: 10px;
-      font-size: 11px;
-      color: var(--ink-soft);
-      padding-top: 4px;
-      border-top: 1px solid rgba(247,243,235,0.12);
-      margin-top: 2px;
     }
 
-    .footer span strong {
+    footer strong {
       color: var(--ink);
       font-weight: 500;
     }
 
     .footer-links {
       display: flex;
-      gap: 10px;
+      gap: 8px;
       flex-wrap: wrap;
     }
 
     .footer-links a {
-      text-decoration: none;
-      color: var(--ink-soft);
-      padding: 3px 7px;
+      padding: 3px 6px;
       border-radius: var(--radius-pill);
       border: 1px solid transparent;
     }
 
     .footer-links a:hover {
-      border-color: rgba(247,243,235,0.3);
-      background: rgba(247,243,235,0.03);
+      border-color: var(--border);
       color: var(--ink);
     }
 
-    /* ---------- RESPONSIVE ---------- */
-    @media (max-width: 840px) {
+    /* RESPONSIVE */
+    @media (max-width: 780px) {
       body {
-        padding: 18px 12px 22px;
+        padding: 18px 10px 26px;
       }
 
-      .page {
-        padding: 16px 14px 18px;
-        border-radius: 24px;
+      main {
+        padding: 16px 14px 20px;
       }
 
       .hero {
         grid-template-columns: minmax(0,1fr);
       }
 
-      .hero-right {
-        order: -1;
-      }
-
-      .collections-grid {
-        grid-template-columns: repeat(2, minmax(0,1fr));
-      }
-
-      .details-grid {
-        grid-template-columns: minmax(0,1fr);
-      }
-
-      .header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .nav {
+      .hero-image {
+        max-width: 260px;
+        margin: 0 auto;
         width: 100%;
-        justify-content: flex-start;
-        flex-wrap: wrap;
       }
-    }
 
-    @media (max-width: 520px) {
-      .collections-grid {
+      .collections {
         grid-template-columns: minmax(0,1fr);
       }
 
-      .hero-title {
-        font-size: 24px;
-      }
-
-      .section-title {
-        font-size: 17px;
+      .contact-grid {
+        grid-template-columns: minmax(0,1fr);
       }
     }
   </style>
 </head>
 <body>
-  <main class="page">
+  <main>
     <!-- HEADER -->
-    <header class="header">
-      <div class="brand">
-        <div class="brand-mark">
-          <div class="brand-initials">CV</div>
-          <div class="brand-label">Film • photo · prints</div>
-        </div>
-        <div class="brand-name">Chantel&nbsp;Vience Studio</div>
-      </div>
-
-      <nav class="nav">
+    <header>
+      <div class="brand-label">Film · photo · prints</div>
+      <div class="brand-name">Chantel&nbsp;Vience Studio</div>
+      <nav>
         <a href="#prints">Prints</a>
-        <span class="nav-dot"></span>
         <a href="#story">Story</a>
-        <span class="nav-dot"></span>
-        <a href="#details">Details</a>
-        <span class="nav-dot"></span>
         <a href="#contact">Contact</a>
       </nav>
     </header>
 
     <!-- HERO -->
-    <section class="hero" id="top">
-      <!-- RIGHT: IMAGE CARD -->
-      <aside class="hero-right" aria-label="Featured print preview">
-        <div class="hero-image-wrap">
-          <div class="hero-image-inner">
-            <div class="hero-sticker">
-              PNW · 35mm · Overcast
-            </div>
-            <div class="hero-label">
-              <span>Featured print</span>
-              <span>“Soft thunder in the pines”</span>
-            </div>
-          </div>
-        </div>
-        <div class="hero-meta">
-          <div>
-            <strong>Moody, not miserable.</strong> Think rainy coastlines, quiet corners, and that weirdly comforting in-between light.
-          </div>
-          <div class="meta-badges">
-            <span class="meta-pill">Film &amp; digital</span>
-            <span class="meta-pill">Pacific Northwest heavy</span>
-          </div>
-        </div>
-      </aside>
-
-      <!-- LEFT: TEXT -->
-      <div class="hero-left">
-        <div class="tag-row">
-          <span class="tag">
-            <span class="tag-dot"></span>
-            Wes Anderson palettes, Addams Family moods
-          </span>
-        </div>
-
-        <h1 class="hero-title">
-          Moody little daydreams for <span>soft-hearted</span> people.
-        </h1>
-
-        <p class="hero-sub">
-          I make images for people who like their walls a little <strong>cinematic</strong>:
-          foggy treelines, odd corners, tiny details, and that “did I dream that?” feeling.
+    <section class="hero" id="story">
+      <div class="hero-text">
+        <div class="hero-tag">Moody · soft · a little odd</div>
+        <h1>Soft, slightly spooky little stills<span>.</span></h1>
+        <p class="hero-line">
+          Film-flavored prints for people who like their walls a bit cinematic and a bit ridiculous.
         </p>
-
-        <div class="hero-pills">
-          <span class="hero-pill">Moody landscapes</span>
-          <span class="hero-pill">Soft botanicals</span>
-          <span class="hero-pill">Tiny worlds</span>
-          <span class="hero-pill">Quiet corners</span>
-        </div>
-
-        <div class="hero-bottom">
-          <p>
-            Not gallery-serious. Not chaos-casual. Just thoughtful prints for people who
-            like things a bit weird, a bit tender, and very pretty.
-          </p>
-          <a href="#prints" class="hero-cta">
-            Shop the stills <span>↗</span>
-          </a>
+        <p class="hero-line-2">
+          Think: cozy melancholy, tiny worlds, quiet drama. Not serious, just sincere.
+        </p>
+        <div class="hero-cta-row">
+          <a href="#prints" class="btn-primary">View prints</a>
+          <a href="#contact" class="btn-ghost">Say hi</a>
         </div>
       </div>
+
+      <aside class="hero-image" aria-label="Featured print">
+        <div class="hero-image-inner"></div>
+        <div class="hero-caption">
+          <span>“Soft thunder in the pines”</span>
+          <span>PNW · film</span>
+        </div>
+      </aside>
     </section>
 
     <!-- PRINT COLLECTIONS -->
-    <section class="section" id="prints">
-      <div class="section-header">
-        <h2 class="section-title">Print collections</h2>
-        <p class="section-sub">
-          A small studio of film-flavored frames: misty forests, crooked stairwells, soft florals,
-          and tiny worlds you almost walked past.
-        </p>
-      </div>
+    <section id="prints">
+      <h2 class="section-title">Collections</h2>
+      <p class="section-sub">
+        A tiny studio of moody stills: forests, florals, and little moments you almost missed.
+      </p>
 
-      <div class="collections-grid">
-        <article class="collection-card">
-          <div class="collection-label">Collection · I</div>
-          <div class="collection-name">Pacific&nbsp;Noir</div>
-          <div class="collection-desc">
-            Moody coastlines, ferry windows, wet pavement, and tree lines that look like an indie
-            film you swear you’ve seen before.
-          </div>
-        </article>
-
-        <article class="collection-card">
-          <div class="collection-label">Collection · II</div>
-          <div class="collection-name">Soft&nbsp;Botanicals</div>
-          <div class="collection-desc">
-            Petals, moss, and forest floor details — close-ups that feel like you paused the world
-            mid-sigh.
-          </div>
-        </article>
-
-        <article class="collection-card">
-          <div class="collection-label">Collection · III</div>
-          <div class="collection-name">Tiny&nbsp;Worlds</div>
-          <div class="collection-desc">
-            The almost-missed moments: reflections, crumbs of light, and small scenes with big
-            feelings.
-          </div>
-        </article>
-
-        <article class="collection-card">
-          <div class="collection-label">Collection · IV</div>
-          <div class="collection-name">Quiet&nbsp;Corners</div>
-          <div class="collection-desc">
-            Stairwells, benches, empty rooms — the in-between spaces that feel oddly like home.
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- STORY + DETAILS -->
-    <section class="section" id="story">
-      <div class="section-header">
-        <h2 class="section-title">A little context</h2>
-        <p class="section-sub">
-          I’m not trying to reinvent photography. I’m just collecting the small, cinematic moments
-          that make regular life feel like a strange little movie.
-        </p>
-      </div>
-
-      <div class="details-grid" id="details">
-        <div class="details-block">
-          <div class="details-title">The vibe</div>
-          <div class="details-main">
-            Moody but not depressing. Playful but not chaotic. Think:
-            if your favorite overcast day and a weirdly comforting dream moved in together.
-          </div>
-          <ul class="details-list">
-            <li>Color palettes inspired by rainy PNW days &amp; old movie posters.</li>
-            <li>A mix of film grain, soft focus, and clean lines — nothing too glossy.</li>
-            <li>Images that look good solo or in little story clusters on your wall.</li>
-          </ul>
-        </div>
-
-        <div class="details-block">
-          <div class="details-title">How prints work</div>
-          <div class="details-main">
-            Small studio, slow pace, high-quality prints.
-          </div>
-          <ul class="details-list">
-            <li>Printed on archival, matte paper (no glare, just vibes).</li>
-            <li>Multiple sizes available — from “tiny altar” to “statement wall”.</li>
-            <li>Packed simply but safely, because we respect the mail journey.</li>
-          </ul>
-          <p class="details-note">
-            Prints will be available through
-            <a href="#" class="link-inline">[your shop link here]</a>.
-            Until then, you can DM/email me if you see something you want on your wall.
+      <div class="collections">
+        <article class="collection">
+          <div class="collection-name">Pacific Noir</div>
+          <p class="collection-desc">
+            Overcast coastlines, ferry windows, wet pavement. Like a low-budget indie film in the best way.
           </p>
-        </div>
+        </article>
+
+        <article class="collection">
+          <div class="collection-name">Soft Botanicals</div>
+          <p class="collection-desc">
+            Petals, moss, and forest floor things. Gentle, a little witchy, very shelf-worthy.
+          </p>
+        </article>
+
+        <article class="collection">
+          <div class="collection-name">Tiny Worlds</div>
+          <p class="collection-desc">
+            Reflections, corners, and blink-and-you-miss-it moments with big feelings.
+          </p>
+        </article>
+
+        <article class="collection">
+          <div class="collection-name">Quiet Corners</div>
+          <p class="collection-desc">
+            Benches, stairwells, empty rooms. The in-between places that feel weirdly like home.
+          </p>
+        </article>
       </div>
     </section>
 
-    <!-- CONTACT / CTA -->
-    <section class="section" id="contact">
-      <div class="section-header">
-        <h2 class="section-title">Say hi / ask about a print</h2>
-        <p class="section-sub">
-          Curious about sizing, custom crops, or building a little wall story? I’m happy to chat,
-          nerd out, or help you pair images.
-        </p>
-      </div>
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+      <p class="section-sub">
+        Want a print, a pair of prints, or just to ask “could this be on my wall?”
+      </p>
 
-      <div class="details-grid">
-        <div class="details-block">
-          <div class="details-title">Reach out</div>
-          <div class="details-main">
-            The easiest way: send me a note with the image you like and the size you’re thinking.
-          </div>
-          <ul class="details-list">
+      <div class="contact-grid">
+        <div class="contact-block">
+          <div class="label">Reach out</div>
+          <ul>
+            <!-- TODO: update these with your real info -->
             <li>Email: <a href="mailto:youremail@example.com" class="link-inline">youremail@example.com</a></li>
             <li>Instagram: <a href="#" class="link-inline">@yourphotohandle</a></li>
-            <li>“Hey, can this be a print?” is a perfectly acceptable first message.</li>
+            <li>“Hi, I like this one” is an excellent first message.</li>
           </ul>
         </div>
 
-        <div class="details-block">
-          <div class="details-title">Tiny FAQ</div>
-          <ul class="details-list">
-            <li><strong>Do you do custom shoots?</strong> Sometimes. Ask and we’ll see.</li>
-            <li><strong>Can I gift a print?</strong> Yes, and you absolutely should.</li>
-            <li><strong>Will there be more?</strong> Always. I collect moments like trinkets.</li>
+        <div class="contact-block">
+          <div class="label">Print details</div>
+          <ul>
+            <li>Archival matte paper — no glare, just vibes.</li>
+            <li>Sizes from tiny altar prints to statement pieces.</li>
+            <li>Packed simply, safely, and with mild obsession.</li>
           </ul>
-          <p class="details-note">
-            If you’re here, thanks for caring about the small, strange, beautiful corners of the world.
+          <p class="note">
+            Shop link coming soon. Until then, it’s all very “secret menu” — just ask.
           </p>
         </div>
       </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="footer">
-      <span>
-        © <strong>Chantel Vience</strong> · film-flavored daydreams from the PNW &amp; beyond.
-      </span>
+    <footer>
+      <span>© <strong>Chantel Vience</strong> · moody, whimsical stills from the PNW & beyond.</span>
       <div class="footer-links">
-        <a href="#top">Back to top</a>
-        <a href="#prints">View prints</a>
+        <a href="#story">Top</a>
+        <a href="#prints">Prints</a>
         <a href="#contact">Contact</a>
       </div>
     </footer>
