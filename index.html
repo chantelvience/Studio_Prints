@@ -13,16 +13,15 @@
 
   <style>
     :root {
-      /* Soft, neutral Wes-coded palette */
-      --bg: #f5f3eb;            /* warm light cream */
-      --bg-card: #f0ede4;       /* soft neutral panel */
-      --bg-accent: #e8e4da;     /* muted beige-gray */
-      --border: #c6bfae;        /* soft, not too pink */
-      --ink: #2b2520;           /* deep brown-black */
-      --ink-soft: #7a6f66;      /* gentle brown-gray */
-      --accent-gold: #d1b87b;   /* muted gold */
-      --accent-green: #8fae9a;  /* soft sage */
-      --accent-rose: #cbaaad;   /* dusty rose */
+      /* moody pastel palette */
+      --bg: #f4f1eb;          /* soft warm cream */
+      --card: #efe7dd;        /* pastel beige */
+      --card-soft: #f6efe5;   /* lighter wash */
+      --border: #c9bca9;      /* gentle taupe */
+      --ink: #2e2520;         /* deep brown-black */
+      --ink-soft: #7b6f66;    /* muted brown-grey */
+      --accent-rose: #cbaaad; /* dusty rose */
+      --accent-sage: #9db2a2; /* soft sage */
 
       --radius-xl: 24px;
       --radius-lg: 16px;
@@ -51,13 +50,12 @@
       margin: auto;
       border-radius: var(--radius-xl);
       border: 1px solid var(--border);
-      background: linear-gradient(180deg, #f7f5ee, #f0ede4);
-      padding: 28px 24px 24px;
+      background: linear-gradient(180deg, #f6f2ec, #efe7dd);
+      padding: 26px 22px 22px;
       display: flex;
       flex-direction: column;
       gap: 22px;
       align-items: center;
-      text-align: center;
     }
 
     a {
@@ -65,12 +63,13 @@
       text-decoration: none;
     }
 
-    /* HEADER / TITLE CARD */
+    /* HEADER */
     header {
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 6px;
+      text-align: center;
     }
 
     .brand-label {
@@ -115,19 +114,18 @@
       margin-top: 8px;
       border-radius: var(--radius-xl);
       border: 1px solid var(--border);
-      padding: 22px 22px 24px;
-      background: var(--bg-card);
+      padding: 20px 18px 22px;
+      background: var(--card);
       display: grid;
       grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-      gap: 24px;
+      gap: 20px;
       align-items: center;
     }
 
-    .hero-inner {
+    .hero-text {
       display: flex;
       flex-direction: column;
       gap: 8px;
-      align-items: flex-start;
       text-align: left;
     }
 
@@ -152,20 +150,20 @@
     .hero-line {
       font-size: 13px;
       color: var(--ink-soft);
-      max-width: 30ch;
+      max-width: 32ch;
     }
 
     .hero-note {
       font-size: 12px;
       color: var(--ink-soft);
-      max-width: 34ch;
+      max-width: 32ch;
     }
 
     .hero-cta {
-      margin-top: 8px;
+      margin-top: 10px;
       display: flex;
-      gap: 8px;
       flex-wrap: wrap;
+      gap: 8px;
     }
 
     .btn-primary {
@@ -174,8 +172,8 @@
       letter-spacing: 0.16em;
       padding: 7px 16px;
       border-radius: var(--radius-pill);
-      border: 1px solid var(--accent-gold);
-      background: #e8dcb5;
+      border: 1px solid var(--border);
+      background: #e7d7b8;
       color: var(--ink);
     }
 
@@ -186,16 +184,15 @@
       padding: 7px 12px;
       border-radius: var(--radius-pill);
       border: 1px solid var(--border);
-      background: transparent;
       color: var(--ink-soft);
+      background: transparent;
     }
 
-    /* HERO IMAGE PANEL */
     .hero-image {
       border-radius: var(--radius-lg);
       border: 1px solid var(--border);
       padding: 10px;
-      background: var(--bg-accent);
+      background: var(--card-soft);
       display: flex;
       flex-direction: column;
       gap: 6px;
@@ -209,8 +206,8 @@
       background-size: cover;
       background-repeat: no-repeat;
 
-      /* HERO IMAGE: rename one of your lake/forest photos to this */
-      background-image: url("moody-landscape-1.jpg");
+      /* HERO IMAGE – update to one of your landscape photos */
+      background-image: url("IMG_9027.jpg");
     }
 
     .hero-caption {
@@ -222,144 +219,72 @@
     }
 
     .hero-caption span:last-child {
-      color: var(--accent-green);
+      color: var(--accent-sage);
     }
 
-    /* COLLECTIONS */
-    .collections {
+    /* PRINTS GRID */
+    .prints {
       border-radius: var(--radius-lg);
       border: 1px solid var(--border);
-      padding: 14px 16px 16px;
-      background: #f3f0e8;
+      padding: 16px 16px 18px;
+      background: #f6f2ec;
       display: flex;
       flex-direction: column;
       gap: 12px;
       align-items: center;
+      text-align: center;
     }
 
-    .collections-title {
+    .prints-title {
       font-family: "Cormorant Garamond", serif;
-      font-size: 15px;
+      font-size: 16px;
       letter-spacing: 0.2em;
       text-transform: uppercase;
     }
 
-    .collections-sub {
+    .prints-sub {
       font-size: 12px;
       color: var(--ink-soft);
       max-width: 46ch;
     }
 
-    .collections-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-      width: 100%;
-    }
-
-    .collection-card {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      align-items: center;
-      text-align: center;
-    }
-
-    .collection-image-wrap {
-      width: 100%;
-      max-width: 220px;
-      border-radius: 16px;
-      border: 1px solid var(--border);
-      overflow: hidden;
-      background: #e8e3d8;
-    }
-
-    .collection-image-wrap img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
-    .collection-name {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 14px;
+    .prints-grid {
       margin-top: 4px;
-    }
-
-    .collection-line {
-      font-size: 11px;
-      color: var(--ink-soft);
-      max-width: 24ch;
-    }
-
-    /* GALLERY */
-    .gallery {
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border);
-      padding: 14px 16px 16px;
-      background: #f7f5ee;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      align-items: center;
-    }
-
-    .gallery-title {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 15px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-    }
-
-    .gallery-groups {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
       width: 100%;
     }
 
-    .gallery-group {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      align-items: center;
-      text-align: center;
-    }
-
-    .gallery-group-label {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 13px;
-    }
-
-    .thumb-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 6px;
-    }
-
-    .thumb-grid img {
-      width: 90px;
-      height: 90px;
-      object-fit: cover;
-      border-radius: 10px;
+    .prints-grid figure {
+      border-radius: 12px;
       border: 1px solid var(--border);
-      background: #e8e3d8;
+      background: #eee5da;
+      padding: 4px;
+      overflow: hidden;
+    }
+
+    .prints-grid img {
       display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
     }
 
     /* CONTACT */
     .contact {
       border-radius: var(--radius-lg);
       border: 1px solid var(--border);
-      padding: 12px 14px 14px;
+      padding: 14px 16px 16px;
       background: #f7f5ee;
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 8px;
       font-size: 12px;
       color: var(--ink-soft);
       align-items: center;
+      text-align: center;
     }
 
     .contact-title {
@@ -385,7 +310,7 @@
 
     /* FOOTER */
     footer {
-      margin-top: 4px;
+      margin-top: 6px;
       padding-top: 8px;
       border-top: 1px solid var(--border);
       font-size: 11px;
@@ -399,7 +324,6 @@
 
     footer strong {
       color: var(--ink);
-      font-weight: 500;
     }
 
     /* RESPONSIVE */
@@ -407,9 +331,9 @@
       .hero {
         grid-template-columns: minmax(0, 1fr);
       }
-      .hero-inner {
-        align-items: center;
+      .hero-text {
         text-align: center;
+        align-items: center;
       }
       .hero-cta {
         justify-content: center;
@@ -418,51 +342,51 @@
         max-width: 280px;
         margin: 6px auto 0;
       }
-      .collections-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .gallery-groups {
-        grid-template-columns: minmax(0, 1fr);
+      .prints-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
     }
 
-    @media (max-width: 720px) {
+    @media (max-width: 640px) {
       body {
         padding: 20px 10px;
       }
       main {
-        padding: 20px 16px 18px;
+        padding: 20px 14px 18px;
+      }
+      .prints-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
   </style>
 </head>
+
 <body>
   <main>
-    <!-- HEADER / TITLE CARD -->
+    <!-- HEADER -->
     <header>
       <div class="brand-label">Film · photo · prints</div>
       <div class="brand-name">Chantel&nbsp;Vience Studio</div>
       <nav>
         <a href="#hero">Home</a>
-        <a href="#collections">Prints</a>
-        <a href="#gallery">Gallery</a>
+        <a href="#prints">Prints</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
 
     <!-- HERO -->
     <section class="hero" id="hero">
-      <div class="hero-inner">
-        <div class="hero-tag">Moody · soft · a little odd</div>
+      <div class="hero-text">
+        <div class="hero-tag">Moody · pastel · a little odd</div>
         <h1>Small, slightly spooky little stills<span>.</span></h1>
         <p class="hero-line">
-          Prints for people who like quiet drama and gentle weirdness on their walls.
+          Film-flavored photos for people who like quiet drama and gentle weirdness.
         </p>
         <p class="hero-note">
-          Tiny worlds, moody landscapes, and macro botanicals — a bit dreamy and a bit strange.
+          Tiny worlds, moody landscapes, and macro botanicals — all in one little studio.
         </p>
         <div class="hero-cta">
-          <a href="#collections" class="btn-primary">View prints</a>
+          <a href="#prints" class="btn-primary">View prints</a>
           <a href="#contact" class="btn-ghost">Say hi</a>
         </div>
       </div>
@@ -470,120 +394,62 @@
       <aside class="hero-image" aria-label="Featured print">
         <div class="hero-image-inner"></div>
         <div class="hero-caption">
-          <span>“Soft thunder on the lake”</span>
-          <span>Moody landscape · film-flavored</span>
+          <span>Film print from the PNW</span>
+          <span>tiny worlds · landscapes · botanicals</span>
         </div>
       </aside>
     </section>
 
-    <!-- COLLECTIONS -->
-    <section class="collections" id="collections">
-      <div class="collections-title">Collections</div>
-      <p class="collections-sub">
-        Tiny scenes, soft botanicals, and quiet landscapes — a small studio of dreamy little worlds.
+    <!-- PRINTS GRID (ALL PHOTOS) -->
+    <section class="prints" id="prints">
+      <div class="prints-title">Prints</div>
+      <p class="prints-sub">
+        Tiny worlds, moody landscapes, and macro botanicals — shown together in one simple grid.
       </p>
 
-      <div class="collections-grid">
-        <!-- Tiny Worlds -->
-        <div class="collection-card">
-          <div class="collection-image-wrap">
-            <!-- rename one of your tiny-detail shots to tiny-worlds-1.jpg -->
-            <img src="tiny-worlds-1.jpg" alt="Tiny Worlds preview" />
-          </div>
-          <div class="collection-name">Tiny Worlds</div>
-          <div class="collection-line">
-            Little scenes that feel close, quiet, and a bit unreal.
-          </div>
-        </div>
+      <div class="prints-grid">
+        <!-- IMG series -->
+        <figure><img src="IMG_9021.jpg" alt="Film photograph"></figure>
+        <figure><img src="IMG_9023.jpg" alt="Film photograph"></figure>
+        <figure><img src="IMG_9024.jpg" alt="Film photograph"></figure>
+        <figure><img src="IMG_9025.jpg" alt="Film photograph"></figure>
+        <figure><img src="IMG_9026.jpg" alt="Film photograph"></figure>
+        <figure><img src="IMG_9027.jpg" alt="Film photograph"></figure>
+        <figure><img src="IMG_9028.jpg" alt="Film photograph"></figure>
+        <figure><img src="IMG_9029.jpg" alt="Film photograph"></figure>
 
-        <!-- Moody Landscapes -->
-        <div class="collection-card">
-          <div class="collection-image-wrap">
-            <!-- could match hero or be another lake/forest scene -->
-            <img src="moody-landscape-2.jpg" alt="Moody Landscapes preview" />
-          </div>
-          <div class="collection-name">Moody Landscapes</div>
-          <div class="collection-line">
-            Soft, cinematic views with weather doing its own thing.
-          </div>
-        </div>
-
-        <!-- Macro Botanicals -->
-        <div class="collection-card">
-          <div class="collection-image-wrap">
-            <!-- strong macro flower -->
-            <img src="macro-botanicals-1.jpg" alt="Macro Botanicals preview" />
-          </div>
-          <div class="collection-name">Macro Botanicals</div>
-          <div class="collection-line">
-            Small floral moments that somehow feel bigger than they are.
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- GALLERY -->
-    <section class="gallery" id="gallery">
-      <div class="gallery-title">More from each series</div>
-
-      <div class="gallery-groups">
-        <!-- Tiny Worlds -->
-        <div class="gallery-group">
-          <div class="gallery-group-label">Tiny Worlds</div>
-          <div class="thumb-grid">
-            <img src="tiny-worlds-1.jpg" alt="Tiny Worlds photo 1">
-            <img src="tiny-worlds-2.jpg" alt="Tiny Worlds photo 2">
-            <img src="tiny-worlds-3.jpg" alt="Tiny Worlds photo 3">
-          </div>
-        </div>
-
-        <!-- Moody Landscapes -->
-        <div class="gallery-group">
-          <div class="gallery-group-label">Moody Landscapes</div>
-          <div class="thumb-grid">
-            <img src="moody-landscape-1.jpg" alt="Moody Landscape photo 1">
-            <img src="moody-landscape-2.jpg" alt="Moody Landscape photo 2">
-            <img src="moody-landscape-3.jpg" alt="Moody Landscape photo 3">
-            <img src="moody-landscape-4.jpg" alt="Moody Landscape photo 4">
-          </div>
-        </div>
-
-        <!-- Macro Botanicals -->
-        <div class="gallery-group">
-          <div class="gallery-group-label">Macro Botanicals</div>
-          <div class="thumb-grid">
-            <img src="macro-botanicals-1.jpg" alt="Macro Botanicals photo 1">
-            <img src="macro-botanicals-2.jpg" alt="Macro Botanicals photo 2">
-            <img src="macro-botanicals-3.jpg" alt="Macro Botanicals photo 3">
-            <img src="macro-botanicals-4.jpg" alt="Macro Botanicals photo 4">
-            <img src="macro-botanicals-5.jpg" alt="Macro Botanicals photo 5">
-            <img src="macro-botanicals-6.jpg" alt="Macro Botanicals photo 6">
-          </div>
-        </div>
+        <!-- Afterlight series -->
+        <figure><img src="AfterlightImage.JPG" alt="Film photograph"></figure>
+        <figure><img src="AfterlightImage (1).JPG" alt="Film photograph"></figure>
+        <figure><img src="AfterlightImage (2).JPG" alt="Film photograph"></figure>
+        <figure><img src="AfterlightImage (3).JPG" alt="Film photograph"></figure>
+        <figure><img src="AfterlightImage (4).JPG" alt="Film photograph"></figure>
+        <figure><img src="AfterlightImage (5).JPG" alt="Film photograph"></figure>
+        <figure><img src="AfterlightImage (6).JPG" alt="Film photograph"></figure>
+        <figure><img src="AfterlightImage (7).JPG" alt="Film photograph"></figure>
+        <figure><img src="AfterlightImage (8).JPG" alt="Film photograph"></figure>
+        <figure><img src="AfterlightImage (9).JPG" alt="Film photograph"></figure>
+        <figure><img src="AfterlightImage (10).JPG" alt="Film photograph"></figure>
+        <figure><img src="AfterlightImage (12).JPG" alt="Film photograph"></figure>
       </div>
     </section>
 
     <!-- CONTACT -->
     <section class="contact" id="contact">
       <div class="contact-title">Contact</div>
-      <p>
-        See something you’d put on your wall?  
-        “Hi, I like this one” is plenty.
-      </p>
+      <p>Prints are matte and made in small batches.</p>
+      <p>If something catches your eye, just say hi.</p>
       <p class="contact-small">
         Email:
         <a href="mailto:youremail@example.com" class="link-inline">youremail@example.com</a><br />
         Instagram:
         <a href="#" class="link-inline">@yourphotohandle</a>
       </p>
-      <p class="contact-small">
-        Prints are archival matte, a few sizes, and packed with gentle obsession.
-      </p>
     </section>
 
     <footer>
-      <span>© <strong>Chantel Vience</strong> · moody, whimsical stills.</span>
-      <span>More images coming soon.</span>
+      <span>© <strong>Chantel Vience</strong></span>
+      <span>moody, whimsical stills.</span>
     </footer>
   </main>
 </body>
