@@ -1,1 +1,364 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Studio Prints · Chantel Vience</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ---------- ROOT THEME ---------- */
+    :root {
+      --studio-green: #1b2a27;
+      --cream: #f3eee7;
+      --dusty-rose: #c69e78;
+      --muted-gold: #d9a441;
+      --soft-black: #1a1a1a;
+      --moody-plum: #493a4a;
+
+      --font-serif: "Cormorant Garamond", serif;
+      --font-sans: "Poppins", sans-serif;
+
+      --radius-frame: 6px;
+      --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    /* GLOBAL */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--studio-green);
+      color: var(--cream);
+      line-height: 1.6;
+    }
+
+    body > * {
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* HEADER */
+    .site-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 1.5rem 0.75rem;
+      border-bottom: 1px solid rgba(243, 238, 231, 0.2);
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo-text {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .main-nav a {
+      margin-left: 1.5rem;
+      font-size: 0.9rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--cream);
+      opacity: 0.85;
+    }
+
+    .main-nav a:hover {
+      opacity: 1;
+      border-bottom: 1px solid var(--muted-gold);
+    }
+
+    /* HERO */
+    .hero {
+      padding: 2.5rem 1.5rem 3rem;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.1rem, 4vw, 2.8rem);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-text p {
+      max-width: 28rem;
+      font-size: 0.95rem;
+      opacity: 0.92;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-primary,
+    .btn-ghost {
+      display: inline-block;
+      padding: 0.6rem 1.4rem;
+      font-size: 0.85rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 999px;
+      border: 1px solid var(--muted-gold);
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background-color: var(--muted-gold);
+      color: var(--soft-black);
+    }
+
+    .btn-primary:hover {
+      background-color: #f1c75a;
+    }
+
+    .btn-ghost {
+      background-color: transparent;
+      color: var(--cream);
+    }
+
+    .btn-ghost:hover {
+      background-color: rgba(217, 164, 65, 0.12);
+    }
+
+    .hero-image-frame {
+      background: radial-gradient(circle at top, #36493f 0, #101816 70%);
+      border-radius: var(--radius-frame);
+      padding: 0.75rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(243, 238, 231, 0.25);
+    }
+
+    .hero-image-frame img {
+      width: 100%;
+      border-radius: 4px;
+      display: block;
+    }
+
+    /* SECTIONS */
+    .section {
+      padding: 2.75rem 1.5rem;
+      background-color: #111815;
+      margin-top: 2rem;
+      border-radius: 12px;
+      border: 1px solid rgba(243, 238, 231, 0.12);
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .section-heading h2 {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-heading p {
+      font-size: 0.95rem;
+      opacity: 0.9;
+      max-width: 32rem;
+      margin: 0 auto;
+    }
+
+    /* GALLERY */
+    .gallery {
+      background: linear-gradient(145deg, #111815, #1b2a27);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .gallery-item {
+      background-color: #151f1c;
+      border-radius: var(--radius-frame);
+      padding: 0.6rem;
+      border: 1px solid rgba(243, 238, 231, 0.12);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      border-radius: 3px;
+      filter: saturate(0.95) contrast(1.05);
+      transition: transform 0.25s ease, filter 0.25s ease;
+      display: block;
+    }
+
+    .gallery-item:hover img {
+      transform: translateY(-4px);
+      filter: saturate(1.05) brightness(1.02);
+    }
+
+    .gallery-item figcaption {
+      margin-top: 0.5rem;
+      font-family: var(--font-serif);
+      font-size: 0.95rem;
+      text-align: center;
+      opacity: 0.9;
+    }
+
+    /* FOOTER */
+    .site-footer {
+      padding: 2.5rem 1.5rem 3rem;
+      text-align: center;
+    }
+
+    .footer-title {
+      font-family: var(--font-serif);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+    }
+
+    .footer-credit {
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      opacity: 0.8;
+    }
+
+    .site-footer a {
+      color: var(--dusty-rose);
+      text-decoration: none;
+    }
+
+    .site-footer a:hover {
+      text-decoration: underline;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="logo-area">
+      <span class="logo-text">Studio Prints</span>
+    </div>
+    <nav class="main-nav">
+      <a href="#gallery">Gallery</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <h1>Quiet Stories in Moody Light</h1>
+        <p>Film-flavored frames, macro botanicals, and tiny worlds you almost missed.</p>
+      </div>
+
+      <div class="hero-image-frame">
+        <img src="https://raw.githubusercontent.com/chantelvience/Studio_Prints/main/photos/FILE_NAME_1.jpg" alt="Hero Photo" />
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="section gallery">
+    <div class="section-heading">
+      <h2>Gallery</h2>
+      <p>A small collection of moody botanicals + textured close-ups.</p>
+    </div>
+
+    <div class="gallery-grid">
+      <figure class="gallery-item">
+        <img src="https://raw.githubusercontent.com/chantelvience/Studio_Prints/main/photos/FILE_NAME_1.jpg" />
+        <figcaption>Buds in teal morning light</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="https://raw.githubusercontent.com/chantelvience/Studio_Prints/main/photos/FILE_NAME_2.jpg" />
+        <figcaption>Ants threading through rope fibers</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="https://raw.githubusercontent.com/chantelvience/Studio_Prints/main/photos/FILE_NAME_3.jpg" />
+        <figcaption>Warm fading wildflowers</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="https://raw.githubusercontent.com/chantelvience/Studio_Prints/main/photos/FILE_NAME_4.jpg" />
+        <figcaption>A droplet hidden inside leaves</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="https://raw.githubusercontent.com/chantelvience/Studio_Prints/main/photos/FILE_NAME_5.jpg" />
+        <figcaption>Magenta glow center</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="https://raw.githubusercontent.com/chantelvience/Studio_Prints/main/photos/FILE_NAME_6.jpg" />
+        <figcaption>Yellow blooms facing the sun</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="https://raw.githubusercontent.com/chantelvience/Studio_Prints/main/photos/FILE_NAME_7.jpg" />
+        <figcaption>Soft seed geometry</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="https://raw.githubusercontent.com/chantelvience/Studio_Prints/main/photos/FILE_NAME_8.jpg" />
+        <figcaption>Forest golden path</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="section-heading">
+      <h2>About</h2>
+      <p>I take photos because I like noticing small things — texture, color, weird little details.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <footer id="contact" class="site-footer">
+    <div class="footer-title">Contact</div>
+    <p>You can reach me at:<br>
+      <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+    <p class="footer-credit">© <span id="year"></span> Chantel Vience · Studio Prints</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
