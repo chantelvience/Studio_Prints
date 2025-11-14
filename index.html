@@ -13,16 +13,15 @@
 
   <style>
     :root {
-      --bg: #081216;          /* deep, moody green-blue */
-      --bg-card: #0f1c21;
-      --bg-soft: #132329;
-      --border: #27373d;
+      --bg: #071015;          /* moody teal/green */
+      --card: #0e1b21;
+      --border: #233238;
       --ink: #f6f3ec;
       --ink-soft: #b1aaa1;
       --accent: #314d3b;      /* studio green */
       --accent-soft: #c19b5b; /* muted gold */
-      --accent-blush: #ad6f7b;/* soft cheeky pink */
-      --radius-xl: 24px;
+      --accent-pink: #ad6f7b; /* cheeky blush */
+      --radius-xl: 26px;
       --radius-lg: 18px;
       --radius-pill: 999px;
     }
@@ -36,7 +35,7 @@
     body {
       min-height: 100vh;
       font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: radial-gradient(circle at top, #16252c 0, #030608 55%, #010204 100%);
+      background: radial-gradient(circle at top, #17252c 0, #020406 55%, #000103 100%);
       color: var(--ink);
       display: flex;
       justify-content: center;
@@ -45,14 +44,17 @@
 
     main {
       width: 100%;
-      max-width: 880px;
+      max-width: 720px;
+      margin: auto;
       border-radius: var(--radius-xl);
       border: 1px solid var(--border);
-      background: linear-gradient(135deg, var(--bg-card), var(--bg-soft));
-      padding: 20px 20px 24px;
+      background: linear-gradient(135deg, #0c181e, #0a1419);
+      padding: 22px 20px 24px;
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 18px;
+      align-items: center;
+      text-align: center;
     }
 
     a {
@@ -61,42 +63,35 @@
     }
 
     /* HEADER */
-    header {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      text-align: center;
-    }
-
     .brand-label {
       font-size: 10px;
       text-transform: uppercase;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.22em;
       color: var(--ink-soft);
     }
 
     .brand-name {
       font-family: "Cormorant Garamond", serif;
       font-size: 24px;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
+      margin-top: 4px;
     }
 
     nav {
+      margin-top: 8px;
       display: flex;
       gap: 10px;
       font-size: 11px;
       text-transform: uppercase;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.18em;
       color: var(--ink-soft);
-      margin-top: 4px;
       flex-wrap: wrap;
       justify-content: center;
     }
 
     nav a {
-      padding: 4px 9px;
+      padding: 3px 8px;
       border-radius: var(--radius-pill);
       border: 1px solid transparent;
     }
@@ -106,21 +101,17 @@
       color: var(--ink);
     }
 
-    /* HERO */
+    /* HERO BLOCK */
     .hero {
+      margin-top: 8px;
       border-radius: var(--radius-xl);
       border: 1px solid var(--border);
-      padding: 18px 18px 20px;
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 18px;
-      align-items: center;
-    }
-
-    .hero-text {
+      padding: 16px 16px 18px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 12px;
+      align-items: center;
+      background: #0b171d;
     }
 
     .hero-tag {
@@ -132,7 +123,7 @@
 
     h1 {
       font-family: "Cormorant Garamond", serif;
-      font-size: clamp(26px, 3vw, 30px);
+      font-size: 26px;
       line-height: 1.1;
       max-width: 18ch;
     }
@@ -144,63 +135,32 @@
     .hero-line {
       font-size: 13px;
       color: var(--ink-soft);
-      max-width: 32ch;
+      max-width: 30ch;
+      margin-top: 2px;
     }
 
-    .hero-line-2 {
-      font-size: 12px;
-      color: var(--ink-soft);
-    }
-
-    .hero-cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 6px;
-    }
-
-    .btn-primary {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      padding: 7px 14px;
-      border-radius: var(--radius-pill);
-      border: 1px solid var(--accent-soft);
-      background: var(--accent);
-      color: var(--ink);
-    }
-
-    .btn-ghost {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      padding: 7px 12px;
-      border-radius: var(--radius-pill);
-      border: 1px solid var(--border);
-      background: transparent;
-      color: var(--ink-soft);
-    }
-
-    /* HERO IMAGE */
     .hero-image {
+      margin-top: 10px;
       border-radius: var(--radius-lg);
       border: 1px solid var(--border);
       padding: 10px;
+      background: #091318;
+      width: 100%;
+      max-width: 340px;
       display: flex;
       flex-direction: column;
       gap: 6px;
-      background: #0b181d;
     }
 
     .hero-image-inner {
       border-radius: 14px;
-      border: 1px solid #202f34;
+      border: 1px solid #203137;
       aspect-ratio: 4 / 5;
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
 
-      /* TODO: replace this path with your own image */
+      /* TODO: replace this with one of your prints */
       background-image: url("your-moody-print.jpg");
     }
 
@@ -213,105 +173,65 @@
     }
 
     .hero-caption span:last-child {
-      color: var(--accent-blush);
+      color: var(--accent-pink);
     }
 
-    /* SECTION BASE */
-    section {
+    .hero-cta {
+      margin-top: 10px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn-primary {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      padding: 7px 16px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--accent-soft);
+      background: var(--accent);
+      color: var(--ink);
+    }
+
+    .btn-ghost {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      padding: 7px 12px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--ink-soft);
+    }
+
+    /* MINI COLLECTION LIST */
+    .collections {
       border-radius: var(--radius-lg);
       border: 1px solid var(--border);
-      padding: 14px 16px 16px;
+      padding: 12px 14px 14px;
+      background: #0b171d;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 8px;
     }
 
-    .section-title {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 17px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      text-align: center;
-    }
-
-    .section-sub {
-      font-size: 12px;
-      color: var(--ink-soft);
-      text-align: center;
-      max-width: 46ch;
-      margin: 0 auto;
-    }
-
-    /* COLLECTION CARDS */
-    .collections {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
-      font-size: 12px;
-    }
-
-    .collection {
-      border-radius: 14px;
-      border: 1px solid var(--border);
-      padding: 10px 11px 11px;
-      background: #0b181d;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .collection-name {
+    .collections-title {
       font-family: "Cormorant Garamond", serif;
       font-size: 15px;
-    }
-
-    .collection-desc {
-      font-size: 11px;
-      color: var(--ink-soft);
-    }
-
-    /* CONTACT */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      gap: 10px;
-      font-size: 12px;
-    }
-
-    .contact-block {
-      border-radius: 14px;
-      border: 1px solid var(--border);
-      padding: 10px 11px 11px;
-      background: #0b181d;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .label {
-      font-size: 11px;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--ink-soft);
-    }
-
-    .link-inline {
-      color: var(--accent-soft);
-      border-bottom: 1px dotted rgba(193,155,91,0.7);
-      text-decoration: none;
-    }
-
-    .link-inline:hover {
-      border-bottom-style: solid;
     }
 
     ul {
       list-style: none;
+      margin-top: 4px;
       display: flex;
       flex-direction: column;
       gap: 4px;
+      font-size: 12px;
       color: var(--ink-soft);
-      font-size: 11px;
     }
 
     ul li::before {
@@ -319,9 +239,49 @@
       opacity: 0.6;
     }
 
-    .note {
+    .collection-name {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 14px;
+      color: var(--ink);
+    }
+
+    .collection-note {
       font-size: 11px;
       color: var(--ink-soft);
+      margin-top: 4px;
+    }
+
+    /* CONTACT */
+    .contact {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      padding: 12px 14px 14px;
+      background: #0b171d;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--ink-soft);
+    }
+
+    .contact-title {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 15px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .link-inline {
+      color: var(--accent-soft);
+      border-bottom: 1px dotted rgba(193,155,91,0.7);
+    }
+
+    .link-inline:hover {
+      border-bottom-style: solid;
+    }
+
+    .contact-small {
+      font-size: 11px;
     }
 
     /* FOOTER */
@@ -335,7 +295,6 @@
       justify-content: space-between;
       gap: 8px;
       flex-wrap: wrap;
-      align-items: center;
     }
 
     footer strong {
@@ -343,170 +302,82 @@
       font-weight: 500;
     }
 
-    .footer-links {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      padding: 3px 6px;
-      border-radius: var(--radius-pill);
-      border: 1px solid transparent;
-    }
-
-    .footer-links a:hover {
-      border-color: var(--border);
-      color: var(--ink);
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 780px) {
+    @media (max-width: 600px) {
       body {
         padding: 18px 10px 26px;
       }
-
       main {
-        padding: 16px 14px 20px;
-      }
-
-      .hero {
-        grid-template-columns: minmax(0,1fr);
-      }
-
-      .hero-image {
-        max-width: 260px;
-        margin: 0 auto;
-        width: 100%;
-      }
-
-      .collections {
-        grid-template-columns: minmax(0,1fr);
-      }
-
-      .contact-grid {
-        grid-template-columns: minmax(0,1fr);
+        padding: 18px 14px 20px;
       }
     }
   </style>
 </head>
 <body>
   <main>
-    <!-- HEADER -->
     <header>
       <div class="brand-label">Film · photo · prints</div>
       <div class="brand-name">Chantel&nbsp;Vience Studio</div>
       <nav>
-        <a href="#prints">Prints</a>
-        <a href="#story">Story</a>
+        <a href="#hero">Home</a>
+        <a href="#collections">Prints</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
 
-    <!-- HERO -->
-    <section class="hero" id="story">
-      <div class="hero-text">
-        <div class="hero-tag">Moody · soft · a little odd</div>
-        <h1>Soft, slightly spooky little stills<span>.</span></h1>
-        <p class="hero-line">
-          Film-flavored prints for people who like their walls a bit cinematic and a bit ridiculous.
-        </p>
-        <p class="hero-line-2">
-          Think: cozy melancholy, tiny worlds, quiet drama. Not serious, just sincere.
-        </p>
-        <div class="hero-cta-row">
-          <a href="#prints" class="btn-primary">View prints</a>
-          <a href="#contact" class="btn-ghost">Say hi</a>
-        </div>
-      </div>
+    <section class="hero" id="hero">
+      <div class="hero-tag">Moody · soft · a little odd</div>
+      <h1>Small, slightly spooky little stills<span>.</span></h1>
+      <p class="hero-line">
+        For people who like their walls a bit cinematic, a bit witchy, and very gentle.
+      </p>
 
-      <aside class="hero-image" aria-label="Featured print">
+      <div class="hero-image">
         <div class="hero-image-inner"></div>
         <div class="hero-caption">
           <span>“Soft thunder in the pines”</span>
-          <span>PNW · film</span>
+          <span>PNW · film-flavored</span>
         </div>
-      </aside>
-    </section>
+      </div>
 
-    <!-- PRINT COLLECTIONS -->
-    <section id="prints">
-      <h2 class="section-title">Collections</h2>
-      <p class="section-sub">
-        A tiny studio of moody stills: forests, florals, and little moments you almost missed.
-      </p>
-
-      <div class="collections">
-        <article class="collection">
-          <div class="collection-name">Pacific Noir</div>
-          <p class="collection-desc">
-            Overcast coastlines, ferry windows, wet pavement. Like a low-budget indie film in the best way.
-          </p>
-        </article>
-
-        <article class="collection">
-          <div class="collection-name">Soft Botanicals</div>
-          <p class="collection-desc">
-            Petals, moss, and forest floor things. Gentle, a little witchy, very shelf-worthy.
-          </p>
-        </article>
-
-        <article class="collection">
-          <div class="collection-name">Tiny Worlds</div>
-          <p class="collection-desc">
-            Reflections, corners, and blink-and-you-miss-it moments with big feelings.
-          </p>
-        </article>
-
-        <article class="collection">
-          <div class="collection-name">Quiet Corners</div>
-          <p class="collection-desc">
-            Benches, stairwells, empty rooms. The in-between places that feel weirdly like home.
-          </p>
-        </article>
+      <div class="hero-cta">
+        <a href="#collections" class="btn-primary">View prints</a>
+        <a href="#contact" class="btn-ghost">Say hi</a>
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact">
-      <h2 class="section-title">Contact</h2>
-      <p class="section-sub">
-        Want a print, a pair of prints, or just to ask “could this be on my wall?”
+    <section class="collections" id="collections">
+      <div class="collections-title">Collections</div>
+      <ul>
+        <li><span class="collection-name">Pacific Noir</span> — overcast coasts, ferry windows, wet pavement.</li>
+        <li><span class="collection-name">Soft Botanicals</span> — petals, moss, forest floor treasures.</li>
+        <li><span class="collection-name">Tiny Worlds</span> — reflections, corners, blink-and-you-miss-it moments.</li>
+        <li><span class="collection-name">Quiet Corners</span> — benches, stairwells, empty rooms that feel like home.</li>
+      </ul>
+      <p class="collection-note">
+        Think “Wes Anderson wanders through the PNW on a cloudy day.”
       </p>
-
-      <div class="contact-grid">
-        <div class="contact-block">
-          <div class="label">Reach out</div>
-          <ul>
-            <!-- TODO: update these with your real info -->
-            <li>Email: <a href="mailto:youremail@example.com" class="link-inline">youremail@example.com</a></li>
-            <li>Instagram: <a href="#" class="link-inline">@yourphotohandle</a></li>
-            <li>“Hi, I like this one” is an excellent first message.</li>
-          </ul>
-        </div>
-
-        <div class="contact-block">
-          <div class="label">Print details</div>
-          <ul>
-            <li>Archival matte paper — no glare, just vibes.</li>
-            <li>Sizes from tiny altar prints to statement pieces.</li>
-            <li>Packed simply, safely, and with mild obsession.</li>
-          </ul>
-          <p class="note">
-            Shop link coming soon. Until then, it’s all very “secret menu” — just ask.
-          </p>
-        </div>
-      </div>
     </section>
 
-    <!-- FOOTER -->
+    <section class="contact" id="contact">
+      <div class="contact-title">Contact</div>
+      <p>
+        See something you’d put on your wall?  
+        “Hi, I like this one” is enough.
+      </p>
+      <p class="contact-small">
+        Email:
+        <a href="mailto:youremail@example.com" class="link-inline">youremail@example.com</a><br />
+        Instagram:
+        <a href="#" class="link-inline">@yourphotohandle</a>
+      </p>
+      <p class="contact-small">
+        Prints are archival matte, a few sizes, packed with care and mild obsession.
+      </p>
+    </section>
+
     <footer>
-      <span>© <strong>Chantel Vience</strong> · moody, whimsical stills from the PNW & beyond.</span>
-      <div class="footer-links">
-        <a href="#story">Top</a>
-        <a href="#prints">Prints</a>
-        <a href="#contact">Contact</a>
-      </div>
+      <span>© <strong>Chantel Vience</strong> · moody, whimsical stills.</span>
+      <span>More images coming soon.</span>
     </footer>
   </main>
 </body>
