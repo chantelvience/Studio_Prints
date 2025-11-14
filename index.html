@@ -27,11 +27,7 @@
       --radius-pill: 999px;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       min-height: 100vh;
@@ -40,8 +36,7 @@
       color: var(--ink);
       display: flex;
       justify-content: center;
-      align-items: center;
-      padding: 24px 14px;
+      padding: 30px 14px;
     }
 
     main {
@@ -50,36 +45,35 @@
       border-radius: var(--radius-xl);
       border: 1px solid var(--border);
       background: linear-gradient(180deg, #f6f2ec, #efe7dd);
-      padding: 24px 22px 20px;
+      padding: 26px;
       display: flex;
       flex-direction: column;
-      gap: 18px;
+      gap: 24px;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
 
+    /* ---------------------------------- */
     /* HEADER */
+    /* ---------------------------------- */
+
     header {
+      text-align: center;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      gap: 6px;
-      text-align: center;
+      gap: 8px;
     }
 
     .brand-label {
-      font-size: 10px;
+      font-size: 11px;
       letter-spacing: 0.22em;
-      text-transform: uppercase;
       color: var(--ink-soft);
+      text-transform: uppercase;
     }
 
     .brand-name {
       font-family: "Cormorant Garamond", serif;
-      font-size: 24px;
+      font-size: 26px;
       letter-spacing: 0.22em;
       text-transform: uppercase;
     }
@@ -87,17 +81,15 @@
     nav {
       margin-top: 8px;
       display: flex;
-      gap: 10px;
+      gap: 12px;
+      justify-content: center;
       font-size: 11px;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--ink-soft);
-      flex-wrap: wrap;
-      justify-content: center;
     }
 
     nav a {
-      padding: 3px 10px;
+      padding: 4px 12px;
       border-radius: var(--radius-pill);
       border: 1px solid transparent;
     }
@@ -106,88 +98,59 @@
       border-color: var(--border);
     }
 
-    /* HERO */
-    .hero {
-      margin-top: 14px;
+    /* ---------------------------------- */
+    /* HERO SECTION */
+    /* ---------------------------------- */
+
+    .hero-box {
+      margin-top: 10px;
       border-radius: var(--radius-lg);
       border: 1px solid var(--border);
-      padding: 20px 18px 22px;
+      padding: 26px 22px;
       background: var(--card);
 
-      /* ⭐ TEXT SIDE WIDER */
       display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.9fr);
-      gap: 26px;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 28px;
       align-items: center;
     }
 
-    .hero-text {
+    .hero-copy {
       display: flex;
       flex-direction: column;
       gap: 14px;
+      transform: scale(1.15);
+      transform-origin: top left;
     }
 
-    .hero-tag {
+    .hero-copy .tag {
       font-size: 13px;
-      text-transform: lowercase;
       letter-spacing: 0.15em;
       color: var(--ink-soft);
+      text-transform: lowercase;
     }
 
-    h1 {
+    .hero-copy h1 {
       font-family: "Cormorant Garamond", serif;
-
-      /* ⭐ BIGGER HEADING */
       font-size: 36px;
-      line-height: 1.05;
-      max-width: 22ch;
+      line-height: 1.06;
     }
 
-    h1 span {
+    .hero-copy h1 span {
       color: var(--accent-rose);
     }
 
-    .hero-line {
+    .hero-copy p {
       font-size: 15px;
       color: var(--ink-soft);
       max-width: 40ch;
+      margin-top: -4px;
     }
 
-    .hero-note {
-      font-size: 14px;
-      color: var(--ink-soft);
-      max-width: 40ch;
-    }
-
-    .hero-cta {
-      margin-top: 12px;
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .btn-primary {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      padding: 8px 16px;
-      border-radius: var(--radius-pill);
-      border: 1px solid var(--border);
-      background: #e7d7b8;
-      color: var(--ink);
-    }
-
-    .btn-ghost {
-      font-size: 12px;
-      letter-spacing: 0.16em;
-      padding: 8px 12px;
-      border-radius: var(--radius-pill);
-      border: 1px solid var(--border);
-      background: transparent;
-      color: var(--ink-soft);
-    }
-
+    /* ---------------------------------- */
     /* HERO IMAGE */
+    /* ---------------------------------- */
+
     .hero-image {
       border-radius: var(--radius-lg);
       border: 1px solid var(--border);
@@ -195,21 +158,17 @@
       background: var(--card-soft);
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 8px;
     }
 
     .hero-image-inner {
+      width: 100%;
+      height: 380px;
       border-radius: 14px;
       border: 1px solid #cec6b9;
-      width: 100%;
-
-      /* ⭐ BERRY IMAGE HEIGHT (YOU LIKED THIS) */
-      height: 380px;
-
       background-image: url("photos/IMG_9027.jpg");
       background-size: cover;
       background-position: center;
-      background-repeat: no-repeat;
     }
 
     .hero-caption {
@@ -223,159 +182,201 @@
       color: var(--accent-sage);
     }
 
-    /* PRINTS */
+    /* ---------------------------------- */
+    /* PRINTS GRID */
+    /* ---------------------------------- */
+
     .prints {
       border-radius: var(--radius-lg);
       border: 1px solid var(--border);
-      padding: 16px;
+      padding: 20px;
       background: #f6f2ec;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      align-items: center;
       text-align: center;
     }
 
     .prints-title {
       font-family: "Cormorant Garamond", serif;
-      font-size: 16px;
-      letter-spacing: 0.2em;
+      font-size: 18px;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
     }
 
     .prints-sub {
       font-size: 12px;
       color: var(--ink-soft);
+      margin-top: 4px;
+      margin-bottom: 10px;
     }
 
     .prints-grid {
-      margin-top: 4px;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 10px;
-      width: 100%;
+      margin-top: 12px;
     }
 
     .prints-grid figure {
       border-radius: 12px;
       border: 1px solid var(--border);
-      background: #eee5da;
       padding: 4px;
+      background: #eee5da;
       overflow: hidden;
     }
 
     .prints-grid img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      display: block;
       border-radius: 8px;
+      object-fit: cover;
+      height: 100%;
     }
 
+    /* ---------------------------------- */
+    /* CONTACT */
+    /* ---------------------------------- */
+
+    .contact {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      padding: 18px;
+      background: #f7f5ee;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--ink-soft);
+    }
+
+    .contact-title {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 16px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+
+    /* ---------------------------------- */
+    /* FOOTER */
+    /* ---------------------------------- */
+
+    footer {
+      margin-top: 6px;
+      padding-top: 8px;
+      border-top: 1px solid var(--border);
+      font-size: 11px;
+      color: var(--ink-soft);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    /* ---------------------------------- */
     /* RESPONSIVE */
+    /* ---------------------------------- */
+
     @media(max-width:900px){
-      .hero {
+      .hero-box {
         grid-template-columns: 1fr;
       }
-      .hero-text {
+      .hero-copy {
+        transform: scale(1.1);
         text-align: center;
         align-items: center;
+        transform-origin: top center;
       }
       .hero-image {
-        max-width: 350px;
+        max-width: 360px;
         margin: 0 auto;
       }
-      .prints-grid {
-        grid-template-columns: repeat(3,1fr);
-      }
+      .prints-grid { grid-template-columns: repeat(3,1fr); }
     }
 
     @media(max-width:640px){
-      .prints-grid {
-        grid-template-columns: repeat(2,1fr);
-      }
+      .prints-grid { grid-template-columns: repeat(2,1fr); }
     }
+
   </style>
 </head>
 
 <body>
-  <main>
 
-    <header>
-      <div class="brand-label">film · photo · prints</div>
-      <div class="brand-name">Chantel Vience Studio</div>
-      <nav>
-        <a href="#hero">Home</a>
-        <a href="#prints">Prints</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
+<main>
 
-    <!-- HERO -->
-    <section class="hero" id="hero">
+  <header>
+    <div class="brand-label">film · photo · prints</div>
+    <div class="brand-name">Chantel Vience Studio</div>
+    <nav>
+      <a href="#hero">Home</a>
+      <a href="#prints">Prints</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-      <div class="hero-text">
-        <div class="hero-tag">moody · dreamy · a little odd</div>
+  <!-- HERO SECTION -->
+  <section id="hero" class="hero-box">
 
-        <h1>small moments<span>.</span></h1>
+    <div class="hero-copy">
+      <div class="tag">moody · dreamy · a little odd</div>
+      <h1>small moments<span>.</span></h1>
+      <p>film.iphone.macro</p>
+    </div>
 
-        <p class="hero-line">film.iphone.macro</p>
+    <aside class="hero-image">
+      <div class="hero-image-inner"></div>
+      <div class="hero-caption">
+        <span>Film still</span>
+        <span>nature · light</span>
       </div>
+    </aside>
 
-      <aside class="hero-image">
-        <div class="hero-image-inner"></div>
-        <div class="hero-caption">
-          <span>Film still</span>
-          <span>nature · light</span>
-        </div>
-      </aside>
+  </section>
 
-    </section>
+  <!-- PRINTS GRID -->
+  <section class="prints" id="prints">
+    <div class="prints-title">Prints</div>
+    <p class="prints-sub">all in one little spot.</p>
 
-    <!-- PRINTS GRID -->
-    <section class="prints" id="prints">
-      <div class="prints-title">Prints</div>
-      <p class="prints-sub">all in one little spot.</p>
+    <div class="prints-grid">
 
-      <div class="prints-grid">
+      <figure><img src="photos/IMG_9021.jpg"></figure>
+      <figure><img src="photos/IMG_9023.jpg"></figure>
+      <figure><img src="photos/IMG_9024.jpg"></figure>
+      <figure><img src="photos/IMG_9025.jpg"></figure>
+      <figure><img src="photos/IMG_9026.jpg"></figure>
+      <figure><img src="photos/IMG_9027.jpg"></figure>
+      <figure><img src="photos/IMG_9028.jpg"></figure>
+      <figure><img src="photos/IMG_9029.jpg"></figure>
 
-        <figure><img src="photos/IMG_9021.jpg"></figure>
-        <figure><img src="photos/IMG_9023.jpg"></figure>
-        <figure><img src="photos/IMG_9024.jpg"></figure>
-        <figure><img src="photos/IMG_9025.jpg"></figure>
-        <figure><img src="photos/IMG_9026.jpg"></figure>
-        <figure><img src="photos/IMG_9027.jpg"></figure>
-        <figure><img src="photos/IMG_9028.jpg"></figure>
-        <figure><img src="photos/IMG_9029.jpg"></figure>
+      <figure><img src="photos/AfterlightImage.JPG"></figure>
+      <figure><img src="photos/AfterlightImage (1).JPG"></figure>
+      <figure><img src="photos/AfterlightImage (2).JPG"></figure>
+      <figure><img src="photos/AfterlightImage (3).JPG"></figure>
+      <figure><img src="photos/AfterlightImage (4).JPG"></figure>
+      <figure><img src="photos/AfterlightImage (5).JPG"></figure>
+      <figure><img src="photos/AfterlightImage (6).JPG"></figure>
+      <figure><img src="photos/AfterlightImage (7).JPG"></figure>
+      <figure><img src="photos/AfterlightImage (8).JPG"></figure>
+      <figure><img src="photos/AfterlightImage (9).JPG"></figure>
+      <figure><img src="photos/AfterlightImage (10).JPG"></figure>
+      <figure><img src="photos/AfterlightImage (12).JPG"></figure>
 
-        <figure><img src="photos/AfterlightImage.JPG"></figure>
-        <figure><img src="photos/AfterlightImage (1).JPG"></figure>
-        <figure><img src="photos/AfterlightImage (2).JPG"></figure>
-        <figure><img src="photos/AfterlightImage (3).JPG"></figure>
-        <figure><img src="photos/AfterlightImage (4).JPG"></figure>
-        <figure><img src="photos/AfterlightImage (5).JPG"></figure>
-        <figure><img src="photos/AfterlightImage (6).JPG"></figure>
-        <figure><img src="photos/AfterlightImage (7).JPG"></figure>
-        <figure><img src="photos/AfterlightImage (8).JPG"></figure>
-        <figure><img src="photos/AfterlightImage (9).JPG"></figure>
-        <figure><img src="photos/AfterlightImage (10).JPG"></figure>
-        <figure><img src="photos/AfterlightImage (12).JPG"></figure>
+    </div>
+  </section>
 
-      </div>
-    </section>
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="contact-title">Contact</div>
+    <p>Prints are matte and made in small batches.</p>
+    <p>If something catches your eye, just say hi.</p>
+    <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+  </section>
 
-    <!-- CONTACT -->
-    <section class="contact" id="contact">
-      <div class="contact-title">Contact</div>
-      <p>Prints are matte and made in small batches.</p>
-      <p>If something catches your eye, just say hi.</p>
-      <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
-    </section>
+  <footer>
+    <span>© <strong>Chantel Vience</strong></span>
+    <span>moody, whimsical stills.</span>
+  </footer>
 
-    <footer>
-      <span>© <strong>Chantel Vience</strong></span>
-      <span>moody, whimsical stills.</span>
-    </footer>
-
-  </main>
+</main>
 </body>
 </html>
