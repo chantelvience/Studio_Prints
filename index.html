@@ -24,4 +24,539 @@
       --pill-border: #e0cbb3;
       --radius-lg: 26px;
       --radius-md: 18px;
-      --shadow-soft: 0
+      --shadow-soft: 0 14px 38px rgba(0, 0, 0, 0.09);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-main);
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ---------- PAGE FRAME ---------- */
+    .page-shell {
+      max-width: 1120px;
+      margin: 2.5rem auto 3.5rem;
+      padding: 2.5rem 2.2rem 3rem;
+      background: #fdf7f1;
+      border-radius: 34px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+    }
+
+    @media (max-width: 780px) {
+      .page-shell {
+        margin: 1.5rem 1rem 2.5rem;
+        padding: 1.8rem 1.4rem 2.4rem;
+        border-radius: 24px;
+      }
+    }
+
+    /* ---------- HEADER ---------- */
+    header {
+      text-align: center;
+      margin-bottom: 2.4rem;
+    }
+
+    .header-tagline {
+      font-size: 0.8rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+      margin-bottom: 0.5rem;
+    }
+
+    .site-title {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2.3rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 1.4rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1.9rem;
+      font-size: 0.9rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    nav a {
+      position: relative;
+      padding-bottom: 0.25rem;
+      color: var(--text-soft);
+    }
+
+    nav a:hover::after,
+    nav a:focus-visible::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 0;
+      width: 70%;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    nav a.active {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      margin-top: 2.4rem;
+      margin-bottom: 2.8rem;
+    }
+
+    .hero-box {
+      background: var(--bg-panel);
+      border-radius: var(--radius-lg);
+      padding: 3.1rem 3rem;
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero-copy {
+      flex: 1.3;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.9rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2.6rem;
+      line-height: 1.15;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.02rem;
+      color: var(--text-soft);
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1.9rem;
+    }
+
+    .pill {
+      font-size: 0.78rem;
+      padding: 0.42rem 0.85rem;
+      border-radius: 999px;
+      background: var(--pill-bg);
+      border: 1px solid var(--pill-border);
+      text-transform: lowercase;
+      letter-spacing: 0.06em;
+      color: var(--text-soft);
+    }
+
+    .pill-strong {
+      font-weight: 500;
+      color: var(--accent);
+      border-color: #c4bca7;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 0.75rem 1.4rem;
+      font-size: 0.9rem;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.15s ease, border-color 0.15s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fdf9f4;
+      box-shadow: 0 10px 24px rgba(46, 56, 44, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 13px 34px rgba(46, 56, 44, 0.45);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      border-color: #c8b8a4;
+      color: var(--text-soft);
+    }
+
+    .btn-ghost:hover {
+      background: #f9efe3;
+      border-color: var(--accent-soft);
+      transform: translateY(-1px);
+    }
+
+    .hero-note {
+      font-size: 0.78rem;
+      color: var(--text-soft);
+      margin-left: 0.25rem;
+    }
+
+    .hero-media {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-media-card {
+      background: #fffdf9;
+      border-radius: var(--radius-md);
+      padding: 0.75rem 0.75rem 0.9rem;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
+      max-width: 260px;
+    }
+
+    .hero-img-wrap {
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 0.7rem;
+    }
+
+    .hero-img-wrap img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-chip-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.6rem;
+      font-size: 0.74rem;
+      color: var(--text-soft);
+      text-transform: lowercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-chip {
+      padding: 0.28rem 0.65rem;
+      border-radius: 999px;
+      background: var(--bg-main);
+      border: 1px solid #e4d6c4;
+      flex: 1;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .hero-mini-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-soft);
+      text-align: center;
+    }
+
+    /* ---------- PRINTS GRID ---------- */
+    .section-heading {
+      text-align: center;
+      margin-bottom: 1.3rem;
+    }
+
+    .section-heading h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.6rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-bottom: 0.35rem;
+    }
+
+    .section-heading p {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+    }
+
+    .prints-grid {
+      margin-top: 1.6rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1.3rem;
+    }
+
+    .print-card {
+      background: #fdf8f2;
+      border-radius: 20px;
+      padding: 0.8rem 0.8rem 1rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+
+    .print-thumb {
+      border-radius: 14px;
+      overflow: hidden;
+      height: 230px;
+    }
+
+    .print-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .print-title {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.15rem;
+    }
+
+    .print-meta {
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .print-meta span {
+      text-transform: lowercase;
+    }
+
+    .print-tag {
+      padding: 0.18rem 0.55rem;
+      border-radius: 999px;
+      background: #f2e4d4;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+    }
+
+    .print-price {
+      font-size: 0.86rem;
+      font-weight: 500;
+      color: var(--accent-soft);
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      margin-top: 2.7rem;
+      border-top: 1px solid #e3d3c1;
+      padding-top: 1.4rem;
+      font-size: 0.78rem;
+      color: var(--text-soft);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.8rem;
+    }
+
+    footer a {
+      text-decoration: underline;
+      text-underline-offset: 0.15em;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 950px) {
+      .hero-box {
+        padding: 2.4rem 2rem;
+        gap: 2.2rem;
+      }
+    }
+
+    @media (max-width: 780px) {
+      .hero-box {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 2.2rem 1.4rem;
+      }
+
+      .hero-actions {
+        justify-content: center;
+      }
+
+      .hero-media-card {
+        max-width: 320px;
+      }
+
+      .hero-title {
+        font-size: 2.2rem;
+      }
+    }
+
+    @media (max-width: 520px) {
+      nav {
+        gap: 1.2rem;
+        font-size: 0.78rem;
+      }
+
+      .hero-box {
+        padding: 2rem 1.1rem 2.2rem;
+      }
+
+      .hero-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-shell">
+    <header>
+      <div class="header-tagline">film · photo · prints</div>
+      <div class="site-title">CHANTEL VIENCE STUDIO</div>
+
+      <nav>
+        <a href="#" class="active">Home</a>
+        <a href="#prints">Prints</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ---------- HERO SECTION ---------- -->
+      <section class="hero">
+        <div class="hero-box">
+          <div class="hero-copy">
+            <div class="hero-eyebrow">moody · dreamy · a little odd</div>
+            <h1 class="hero-title">Small moments, big feeling.</h1>
+            <p class="hero-subtitle">
+              Film, iPhone, and macro photographs for people who love quiet drama,
+              soft light, and a little bit of weird in the best way.
+            </p>
+
+            <div class="hero-pills">
+              <span class="pill pill-strong">film · iphone · macro</span>
+              <span class="pill">tiny worlds &amp; close-ups</span>
+              <span class="pill">nature, texture, stillness</span>
+            </div>
+
+            <div class="hero-actions">
+              <a href="#prints" class="btn btn-primary">Browse prints</a>
+              <a href="#contact" class="btn btn-ghost">Say hello</a>
+              <span class="hero-note">archival-quality prints in small batches</span>
+            </div>
+          </div>
+
+          <div class="hero-media">
+            <div class="hero-media-card">
+              <div class="hero-img-wrap">
+                <!-- swap this path to one of your real images -->
+                <img src="images/hero-berry.jpg" alt="Close-up of berries in moody light">
+              </div>
+              <div class="hero-chip-row">
+                <div class="hero-chip">film still</div>
+                <div class="hero-chip">nature · light</div>
+              </div>
+              <div class="hero-mini-label">from the “small moments” series</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- PRINTS GRID ---------- -->
+      <section id="prints">
+        <div class="section-heading">
+          <h2>Prints</h2>
+          <p>Little scenes, soft colors, and quiet stories — all in one cozy spot.</p>
+        </div>
+
+        <div class="prints-grid">
+          <article class="print-card">
+            <div class="print-thumb">
+              <img src="images/print-1.jpg" alt="Soft focus plants in misty light">
+            </div>
+            <div class="print-title">Morning hush</div>
+            <div class="print-meta">
+              <span>film · landscape</span>
+              <span class="print-price">$38</span>
+            </div>
+            <span class="print-tag">8x10 print</span>
+          </article>
+
+          <article class="print-card">
+            <div class="print-thumb">
+              <img src="images/print-2.jpg" alt="Macro of textured botanicals">
+            </div>
+            <div class="print-title">Soft static</div>
+            <div class="print-meta">
+              <span>macro · texture</span>
+              <span class="print-price">$38</span>
+            </div>
+            <span class="print-tag">8x10 print</span>
+          </article>
+
+          <article class="print-card">
+            <div class="print-thumb">
+              <img src="images/print-3.jpg" alt="Moody close-up nature scene">
+            </div>
+            <div class="print-title">Tiny thunder</div>
+            <div class="print-meta">
+              <span>iphone · tiny world</span>
+              <span class="print-price">$38</span>
+            </div>
+            <span class="print-tag">8x10 print</span>
+          </article>
+
+          <article class="print-card">
+            <div class="print-thumb">
+              <img src="images/print-4.jpg" alt="Dreamy nature detail in soft tones">
+            </div>
+            <div class="print-title">Quiet spell</div>
+            <div class="print-meta">
+              <span>film · detail</span>
+              <span class="print-price">$38</span>
+            </div>
+            <span class="print-tag">8x10 print</span>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact"></section>
+
+      <footer>
+        <span>© <span id="year"></span> Chantel Vience Studio</span>
+        <span>Questions or custom sizes? <a href="mailto:your.email@example.com">Email the studio</a></span>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
