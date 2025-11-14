@@ -1,5 +1,17 @@
 
- <style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Chantel Vience Studio · Prints</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
     :root {
       /* moody pastel palette */
       --bg: #f4f1eb;          /* soft warm cream */
@@ -10,14 +22,6 @@
       --ink-soft: #7b6f66;    /* muted brown-grey */
       --accent-rose: #cbaaad; /* dusty rose */
       --accent-sage: #9db2a2; /* soft sage */
-      --bg: #f4f1eb;
-      --card: #efe7dd;
-      --card-soft: #f6efe5;
-      --border: #c9bca9;
-      --ink: #2e2520;
-      --ink-soft: #7b6f66;
-      --accent-rose: #cbaaad;
-      --accent-sage: #9db2a2;
 
       --radius-xl: 24px;
       --radius-lg: 16px;
@@ -29,25 +33,28 @@
       padding: 0;
       box-sizing: border-box;
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       min-height: 100vh;
       font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      font-family: "Poppins", sans-serif;
       background: var(--bg);
       color: var(--ink);
       display: flex;
-@@ -47,7 +42,6 @@
+      justify-content: center;
+      align-items: center;
+      padding: 24px 14px;
+    }
+
     main {
       width: 100%;
       max-width: 1080px;
-      margin: auto;
       border-radius: var(--radius-xl);
       border: 1px solid var(--border);
       background: linear-gradient(180deg, #f6f2ec, #efe7dd);
-@@ -58,55 +52,38 @@
-      align-items: center;
+      padding: 24px 22px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
     }
 
     a {
@@ -57,7 +64,6 @@
 
     /* HEADER */
     header {
-      text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -87,7 +93,6 @@
       font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 0.18em;
-      text-transform: uppercase;
       color: var(--ink-soft);
       flex-wrap: wrap;
       justify-content: center;
@@ -104,12 +109,14 @@
     }
 
     /* HERO */
-@@ -117,77 +94,35 @@
+    .hero {
+      margin-top: 14px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
       padding: 20px 18px 22px;
       background: var(--card);
       display: grid;
       grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-      grid-template-columns: minmax(0,1.1fr) minmax(0,0.9fr);
       gap: 20px;
       align-items: center;
     }
@@ -117,15 +124,12 @@
     .hero-text {
       display: flex;
       flex-direction: column;
-      gap: 8px;
-      text-align: left;
       gap: 10px;
+      text-align: left;
     }
 
     .hero-tag {
       font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
       text-transform: lowercase;
       letter-spacing: 0.15em;
       color: var(--ink-soft);
@@ -169,7 +173,6 @@
       border-radius: var(--radius-pill);
       border: 1px solid var(--border);
       background: #e7d7b8;
-      font-size: 14px;
       color: var(--ink);
     }
 
@@ -180,48 +183,51 @@
       padding: 7px 12px;
       border-radius: var(--radius-pill);
       border: 1px solid var(--border);
-      color: var(--ink-soft);
       background: transparent;
+      color: var(--ink-soft);
     }
 
+    /* HERO IMAGE (BERRY) */
     .hero-image {
       border-radius: var(--radius-lg);
       border: 1px solid var(--border);
-@@ -201,12 +136,9 @@
+      padding: 10px;
+      background: var(--card-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
     .hero-image-inner {
       border-radius: 14px;
       border: 1px solid #cec6b9;
-      aspect-ratio: 4 / 5;
-      background-position: center;
-      aspect-ratio: 4/5;
-      background-size: cover;
-      background-repeat: no-repeat;
-
-      /* HERO IMAGE – uses one of your moody landscapes */
-      background-position: center;
+      width: 100%;
+      height: 320px;           /* 📌 bigger hero image */
       background-image: url("photos/IMG_9027.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
 
-@@ -215,43 +147,34 @@
+    .hero-caption {
+      font-size: 11px;
       color: var(--ink-soft);
       display: flex;
       justify-content: space-between;
       gap: 6px;
+      flex-wrap: wrap;
     }
 
     .hero-caption span:last-child {
       color: var(--accent-sage);
     }
 
-    /* PRINTS GRID */
     /* PRINTS */
     .prints {
       border-radius: var(--radius-lg);
       border: 1px solid var(--border);
-      padding: 16px 16px 18px;
-      background: #f6f2ec;
       padding: 16px;
-      text-align: center;
+      background: #f6f2ec;
       display: flex;
       flex-direction: column;
       gap: 12px;
@@ -246,11 +252,12 @@
       margin-top: 4px;
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      grid-template-columns: repeat(4,minmax(0,1fr));
       gap: 10px;
       width: 100%;
     }
-@@ -261,196 +184,132 @@
+
+    .prints-grid figure {
+      border-radius: 12px;
       border: 1px solid var(--border);
       background: #eee5da;
       padding: 4px;
@@ -263,27 +270,21 @@
       height: 100%;
       object-fit: cover;
       border-radius: 8px;
-      object-fit: cover;
     }
 
     /* CONTACT */
     .contact {
       border-radius: var(--radius-lg);
       border: 1px solid var(--border);
-      padding: 14px 16px 16px;
+      padding: 14px;
       background: #f7f5ee;
       display: flex;
       flex-direction: column;
-      gap: 8px;
-      padding: 14px;
+      gap: 6px;
       text-align: center;
       font-size: 12px;
       color: var(--ink-soft);
       align-items: center;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
     }
 
     .contact-title {
@@ -291,7 +292,6 @@
       font-size: 15px;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      letter-spacing: 0.2em;
       color: var(--ink);
     }
 
@@ -313,7 +313,6 @@
       margin-top: 6px;
       padding-top: 8px;
       border-top: 1px solid var(--border);
-      padding-top: 8px;
       font-size: 11px;
       color: var(--ink-soft);
       width: 100%;
@@ -359,8 +358,6 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
-    @media(max-width:900px){ .hero{grid-template-columns:1fr;} .prints-grid{grid-template-columns:repeat(3,1fr);} }
-    @media(max-width:640px){ .prints-grid{grid-template-columns:repeat(2,1fr);} }
   </style>
 </head>
 
@@ -380,35 +377,24 @@
     <!-- HERO -->
     <section class="hero" id="hero">
       <div class="hero-text">
-        <div class="hero-tag">Moody · pastel · a little odd</div>
-        <h1>Small, slightly spooky little stills<span>.</span></h1>
-        <p class="hero-line">
-          Film-flavored photos for people who like quiet drama and gentle weirdness.
-        </p>
-        <p class="hero-note">
-          Tiny worlds, moody landscapes, and macro botanicals — all in one little studio.
-        </p>
-        <div class="hero-cta">
-          <a href="#prints" class="btn-primary">View prints</a>
-          <a href="#contact" class="btn-ghost">Say hi</a>
-        </div>
+        <div class="hero-tag">moody · dreamy · a little odd</div>
+        <h1>small moments<span>.</span></h1>
+        <p class="hero-line">film.iphone.macro</p>
       </div>
 
       <aside class="hero-image" aria-label="Featured print">
         <div class="hero-image-inner"></div>
         <div class="hero-caption">
-          <span>Film print from the PNW</span>
-          <span>tiny worlds · landscapes · botanicals</span>
+          <span>Film still</span>
+          <span>nature · light</span>
         </div>
       </aside>
     </section>
 
-    <!-- PRINTS GRID (ALL PHOTOS) -->
+    <!-- PRINTS GRID -->
     <section class="prints" id="prints">
       <div class="prints-title">Prints</div>
-      <p class="prints-sub">
-        Tiny worlds, moody landscapes, and macro botanicals — shown together in one simple grid.
-      </p>
+      <p class="prints-sub">all in one little spot.</p>
 
       <div class="prints-grid">
         <!-- IMG series -->
@@ -455,84 +441,5 @@
       <span>moody, whimsical stills.</span>
     </footer>
   </main>
-<main>
-
-<header>
-  <div class="brand-label">film · photo · prints</div>
-  <div class="brand-name">Chantel Vience Studio</div>
-  <nav>
-    <a href="#hero">Home</a>
-    <a href="#prints">Prints</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
-
-<section class="hero" id="hero">
-
-  <div class="hero-text">
-    <div class="hero-tag">moody · dreamy · a little odd</div>
-
-    <h1>small moments.</h1>
-
-    <p class="hero-line">film.iphone.macro</p>
-  </div>
-
-  <aside class="hero-image">
-    <div class="hero-image-inner"></div>
-    <div class="hero-caption">
-      <span>Film still</span>
-      <span>nature · light</span>
-    </div>
-  </aside>
-</section>
-
-<section class="prints" id="prints">
-  <div class="prints-title">Prints</div>
-  <p class="prints-sub">all in one little spot.</p>
-
-  <div class="prints-grid">
-
-    <!-- IMG series -->
-    <figure><img src="photos/IMG_9021.jpg"></figure>
-    <figure><img src="photos/IMG_9023.jpg"></figure>
-    <figure><img src="photos/IMG_9024.jpg"></figure>
-    <figure><img src="photos/IMG_9025.jpg"></figure>
-    <figure><img src="photos/IMG_9026.jpg"></figure>
-    <figure><img src="photos/IMG_9027.jpg"></figure>
-    <figure><img src="photos/IMG_9028.jpg"></figure>
-    <figure><img src="photos/IMG_9029.jpg"></figure>
-
-    <!-- Afterlight series -->
-    <figure><img src="photos/AfterlightImage.JPG"></figure>
-    <figure><img src="photos/AfterlightImage (1).JPG"></figure>
-    <figure><img src="photos/AfterlightImage (2).JPG"></figure>
-    <figure><img src="photos/AfterlightImage (3).JPG"></figure>
-    <figure><img src="photos/AfterlightImage (4).JPG"></figure>
-    <figure><img src="photos/AfterlightImage (5).JPG"></figure>
-    <figure><img src="photos/AfterlightImage (6).JPG"></figure>
-    <figure><img src="photos/AfterlightImage (7).JPG"></figure>
-    <figure><img src="photos/AfterlightImage (8).JPG"></figure>
-    <figure><img src="photos/AfterlightImage (9).JPG"></figure>
-    <figure><img src="photos/AfterlightImage (10).JPG"></figure>
-    <figure><img src="photos/AfterlightImage (12).JPG"></figure>
-
-  </div>
-</section>
-
-<section class="contact" id="contact">
-  <div class="contact-title">Contact</div>
-
-  <p>Prints are matte and made in small batches.</p>
-  <p>If something catches your eye, just say hi.</p>
-
-  <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
-</section>
-
-<footer>
-  <span>© <strong>Chantel Vience</strong></span>
-  <span>moody, whimsical stills.</span>
-</footer>
-
-</main>
 </body>
 </html>
