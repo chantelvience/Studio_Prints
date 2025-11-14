@@ -13,14 +13,16 @@
 
   <style>
     :root {
-      --bg: #071015;          /* moody teal/green */
-      --card: #0e1b21;
-      --border: #233238;
-      --ink: #f6f3ec;
-      --ink-soft: #b1aaa1;
-      --accent: #314d3b;      /* studio green */
-      --accent-soft: #c19b5b; /* muted gold */
-      --accent-pink: #ad6f7b; /* cheeky blush */
+      /* Wes-ish pastel palette */
+      --bg: #f8f1e6;          /* warm cream */
+      --bg-card: #f3e3cf;     /* peachy beige */
+      --bg-accent: #e0d3c4;   /* muted panel */
+      --border: #c9b59a;
+      --ink: #2a221a;
+      --ink-soft: #7b6a59;
+      --accent-gold: #d3a94d;
+      --accent-green: #9ab8a1;
+      --accent-rose: #d08a8e;
       --radius-xl: 26px;
       --radius-lg: 18px;
       --radius-pill: 999px;
@@ -35,24 +37,24 @@
     body {
       min-height: 100vh;
       font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: radial-gradient(circle at top, #17252c 0, #020406 55%, #000103 100%);
+      background: var(--bg);
       color: var(--ink);
       display: flex;
       justify-content: center;
-      padding: 24px 14px 32px;
+      padding: 32px 16px;
     }
 
     main {
       width: 100%;
-      max-width: 720px;
+      max-width: 780px;
       margin: auto;
       border-radius: var(--radius-xl);
       border: 1px solid var(--border);
-      background: linear-gradient(135deg, #0c181e, #0a1419);
-      padding: 22px 20px 24px;
+      background: linear-gradient(180deg, #f6ebda, #f2e0cc);
+      padding: 24px 22px 20px;
       display: flex;
       flex-direction: column;
-      gap: 18px;
+      gap: 20px;
       align-items: center;
       text-align: center;
     }
@@ -62,7 +64,7 @@
       text-decoration: none;
     }
 
-    /* HEADER */
+    /* HEADER / TITLE CARD */
     .brand-label {
       font-size: 10px;
       text-transform: uppercase;
@@ -73,13 +75,13 @@
     .brand-name {
       font-family: "Cormorant Garamond", serif;
       font-size: 24px;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
-      margin-top: 4px;
+      margin-top: 6px;
     }
 
     nav {
-      margin-top: 8px;
+      margin-top: 10px;
       display: flex;
       gap: 10px;
       font-size: 11px;
@@ -91,14 +93,13 @@
     }
 
     nav a {
-      padding: 3px 8px;
+      padding: 3px 10px;
       border-radius: var(--radius-pill);
       border: 1px solid transparent;
     }
 
     nav a:hover {
       border-color: var(--border);
-      color: var(--ink);
     }
 
     /* HERO BLOCK */
@@ -106,18 +107,26 @@
       margin-top: 8px;
       border-radius: var(--radius-xl);
       border: 1px solid var(--border);
-      padding: 16px 16px 18px;
+      padding: 18px 18px 20px;
+      background: var(--bg-card);
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr);
+      gap: 18px;
+      align-items: center;
+    }
+
+    .hero-inner {
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      align-items: center;
-      background: #0b171d;
+      gap: 8px;
+      align-items: flex-start;
+      text-align: left;
     }
 
     .hero-tag {
       font-size: 11px;
       text-transform: uppercase;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.2em;
       color: var(--ink-soft);
     }
 
@@ -129,69 +138,35 @@
     }
 
     h1 span {
-      color: var(--accent-soft);
+      color: var(--accent-rose);
     }
 
     .hero-line {
       font-size: 13px;
       color: var(--ink-soft);
       max-width: 30ch;
-      margin-top: 2px;
     }
 
-    .hero-image {
-      margin-top: 10px;
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border);
-      padding: 10px;
-      background: #091318;
-      width: 100%;
-      max-width: 340px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .hero-image-inner {
-      border-radius: 14px;
-      border: 1px solid #203137;
-      aspect-ratio: 4 / 5;
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-
-      /* TODO: replace this with one of your prints */
-      background-image: url("your-moody-print.jpg");
-    }
-
-    .hero-caption {
-      font-size: 11px;
+    .hero-note {
+      font-size: 12px;
       color: var(--ink-soft);
-      display: flex;
-      justify-content: space-between;
-      gap: 6px;
-    }
-
-    .hero-caption span:last-child {
-      color: var(--accent-pink);
     }
 
     .hero-cta {
-      margin-top: 10px;
+      margin-top: 8px;
       display: flex;
       gap: 8px;
       flex-wrap: wrap;
-      justify-content: center;
     }
 
     .btn-primary {
       font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 0.18em;
-      padding: 7px 16px;
+      padding: 7px 14px;
       border-radius: var(--radius-pill);
-      border: 1px solid var(--accent-soft);
-      background: var(--accent);
+      border: 1px solid var(--accent-gold);
+      background: #e6d09a;
       color: var(--ink);
     }
 
@@ -206,15 +181,51 @@
       color: var(--ink-soft);
     }
 
-    /* MINI COLLECTION LIST */
+    /* HERO IMAGE PANEL */
+    .hero-image {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      padding: 10px;
+      background: var(--bg-accent);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .hero-image-inner {
+      border-radius: 14px;
+      border: 1px solid #bcae9b;
+      aspect-ratio: 4 / 5;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      /* TODO: replace with one of your own images */
+      background-image: url("your-moody-print.jpg");
+    }
+
+    .hero-caption {
+      font-size: 11px;
+      color: var(--ink-soft);
+      display: flex;
+      justify-content: space-between;
+      gap: 6px;
+    }
+
+    .hero-caption span:last-child {
+      color: var(--accent-green);
+    }
+
+    /* MINI COLLECTION STRIP */
     .collections {
       border-radius: var(--radius-lg);
       border: 1px solid var(--border);
       padding: 12px 14px 14px;
-      background: #0b171d;
+      background: #f5e7d4;
       display: flex;
       flex-direction: column;
       gap: 8px;
+      align-items: center;
     }
 
     .collections-title {
@@ -224,19 +235,14 @@
       text-transform: uppercase;
     }
 
-    ul {
-      list-style: none;
+    .collections-grid {
       margin-top: 4px;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 6px 18px;
       font-size: 12px;
-      color: var(--ink-soft);
-    }
-
-    ul li::before {
-      content: "– ";
-      opacity: 0.6;
+      max-width: 420px;
+      text-align: left;
     }
 
     .collection-name {
@@ -245,10 +251,9 @@
       color: var(--ink);
     }
 
-    .collection-note {
+    .collection-line {
       font-size: 11px;
       color: var(--ink-soft);
-      margin-top: 4px;
     }
 
     /* CONTACT */
@@ -256,12 +261,13 @@
       border-radius: var(--radius-lg);
       border: 1px solid var(--border);
       padding: 12px 14px 14px;
-      background: #0b171d;
+      background: #f6ebda;
       display: flex;
       flex-direction: column;
       gap: 6px;
       font-size: 12px;
       color: var(--ink-soft);
+      align-items: center;
     }
 
     .contact-title {
@@ -269,11 +275,12 @@
       font-size: 15px;
       letter-spacing: 0.2em;
       text-transform: uppercase;
+      color: var(--ink);
     }
 
     .link-inline {
-      color: var(--accent-soft);
-      border-bottom: 1px dotted rgba(193,155,91,0.7);
+      color: var(--accent-rose);
+      border-bottom: 1px dotted rgba(208,138,142,0.7);
     }
 
     .link-inline:hover {
@@ -286,11 +293,12 @@
 
     /* FOOTER */
     footer {
-      margin-top: 2px;
-      padding-top: 6px;
+      margin-top: 4px;
+      padding-top: 8px;
       border-top: 1px solid var(--border);
       font-size: 11px;
       color: var(--ink-soft);
+      width: 100%;
       display: flex;
       justify-content: space-between;
       gap: 8px;
@@ -302,18 +310,43 @@
       font-weight: 500;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 720px) {
       body {
-        padding: 18px 10px 26px;
+        padding: 20px 10px;
       }
+
       main {
-        padding: 18px 14px 20px;
+        padding: 20px 16px 18px;
+      }
+
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-inner {
+        align-items: center;
+        text-align: center;
+      }
+
+      .hero-cta {
+        justify-content: center;
+      }
+
+      .hero-image {
+        max-width: 260px;
+        margin: 6px auto 0;
+      }
+
+      .collections-grid {
+        grid-template-columns: minmax(0, 1fr);
+        text-align: center;
       }
     }
   </style>
 </head>
 <body>
   <main>
+    <!-- HEADER / TITLE CARD -->
     <header>
       <div class="brand-label">Film · photo · prints</div>
       <div class="brand-name">Chantel&nbsp;Vience Studio</div>
@@ -324,40 +357,56 @@
       </nav>
     </header>
 
+    <!-- HERO -->
     <section class="hero" id="hero">
-      <div class="hero-tag">Moody · soft · a little odd</div>
-      <h1>Small, slightly spooky little stills<span>.</span></h1>
-      <p class="hero-line">
-        For people who like their walls a bit cinematic, a bit witchy, and very gentle.
-      </p>
-
-      <div class="hero-image">
-        <div class="hero-image-inner"></div>
-        <div class="hero-caption">
-          <span>“Soft thunder in the pines”</span>
-          <span>PNW · film-flavored</span>
+      <div class="hero-inner">
+        <div class="hero-tag">Moody · soft · a little odd</div>
+        <h1>Small, slightly spooky little stills<span>.</span></h1>
+        <p class="hero-line">
+          Prints for people who like quiet drama and gentle weirdness on their walls.
+        </p>
+        <p class="hero-note">
+          Think: Wes Anderson wanders through a foggy forest and stops to collect tiny moments.
+        </p>
+        <div class="hero-cta">
+          <a href="#collections" class="btn-primary">View prints</a>
+          <a href="#contact" class="btn-ghost">Say hi</a>
         </div>
       </div>
 
-      <div class="hero-cta">
-        <a href="#collections" class="btn-primary">View prints</a>
-        <a href="#contact" class="btn-ghost">Say hi</a>
+      <aside class="hero-image" aria-label="Featured print">
+        <div class="hero-image-inner"></div>
+        <div class="hero-caption">
+          <span>“Soft thunder in the pines”</span>
+          <span>PNW · film</span>
+        </div>
+      </aside>
+    </section>
+
+    <!-- MINI COLLECTIONS -->
+    <section class="collections" id="collections">
+      <div class="collections-title">Collections</div>
+      <div class="collections-grid">
+        <div>
+          <div class="collection-name">Pacific Noir</div>
+          <div class="collection-line">Overcast coasts, ferries, wet pavement.</div>
+        </div>
+        <div>
+          <div class="collection-name">Soft Botanicals</div>
+          <div class="collection-line">Petals, moss, forest-floor treasures.</div>
+        </div>
+        <div>
+          <div class="collection-name">Tiny Worlds</div>
+          <div class="collection-line">Reflections, corners, blink-and-you-miss-it scenes.</div>
+        </div>
+        <div>
+          <div class="collection-name">Quiet Corners</div>
+          <div class="collection-line">Benches, stairwells, rooms between moments.</div>
+        </div>
       </div>
     </section>
 
-    <section class="collections" id="collections">
-      <div class="collections-title">Collections</div>
-      <ul>
-        <li><span class="collection-name">Pacific Noir</span> — overcast coasts, ferry windows, wet pavement.</li>
-        <li><span class="collection-name">Soft Botanicals</span> — petals, moss, forest floor treasures.</li>
-        <li><span class="collection-name">Tiny Worlds</span> — reflections, corners, blink-and-you-miss-it moments.</li>
-        <li><span class="collection-name">Quiet Corners</span> — benches, stairwells, empty rooms that feel like home.</li>
-      </ul>
-      <p class="collection-note">
-        Think “Wes Anderson wanders through the PNW on a cloudy day.”
-      </p>
-    </section>
-
+    <!-- CONTACT -->
     <section class="contact" id="contact">
       <div class="contact-title">Contact</div>
       <p>
@@ -371,7 +420,7 @@
         <a href="#" class="link-inline">@yourphotohandle</a>
       </p>
       <p class="contact-small">
-        Prints are archival matte, a few sizes, packed with care and mild obsession.
+        Prints are archival matte, a few sizes, and packed with gentle obsession.
       </p>
     </section>
 
